@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #495057;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #d1d3e2;
+        }
+
+        .title{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Modal umumiy uslubi */
+        .hammasi2 {
+            display: none;
+            /* Modalni yashirish */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            /* Qorong'u fon */
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .hammasi2.show {
+            display: flex;
+            /* Modalni ko'rsatish uchun */
+            opacity: 1;
+        }
+
+        /* Modal ichki qismi */
+        .shunchak {
+            background: #ffffff;
+            padding: 40px 40px 30px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .hammasi2.show .shunchak {
+            transform: scale(1);
+        }
+
+        /* Sarlavha */
+        .a1 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Inputlar */
+        input[type="text"] {
+            padding: 15px;
+            width: 340px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #4caf50;
+            background-color: #e8f5e9;
+        }
+
+        /* Button uslublari */
+        button {
+            padding: 15px 40px;
+            background-color: #4caf50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-left: 65px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+   
+
+        /* Modalni ochish va yopish uchun JavaScript bilan o'zgartirishlar */
+        .hammasi2.show {
+            display: flex;
+            /* Modalni ko'rsatish uchun */
+            opacity: 1;
+        }
+        .containers{
+            background-color: aqua;
+            padding: 80px 50px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="containers">
+        <div class="registers">
+            <h1 class="title">Registers</h1>
+            <input type="text" placeholder="Ismingizni kiriting: " style="margin-bottom: 15px;"><br>
+            <input type="text" placeholder="Familiyangizni kiriting: "><br> <br>
+            <a href="../templates/index.html"><button>Registerdan o'tish</button></a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1546 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Akmal Farm Medical - shop list</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon -->
+        <link rel="shortcut icon"  href="../static/assets/img2/AFM MEDICAL — копия.png">
+		
+		<!-- all css here -->
+        <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/assets/css/bundle.css">
+        <link rel="stylesheet" href="../static/assets/css/plugins.css">
+        <link rel="stylesheet" href="../static/assets/css/style.css">
+        <link rel="stylesheet" href="../static/assets/css/responsive.css">
+        <script src="../static/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+   <!-- header boshlandi -->
+   <header class="header_area">
+    <div class="header_top">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="top_right text-end" style="justify-content: right !important;">
+                        <ul class="ui1">
+                            <a href="about.html" style="color: white;">О Нас |</a>
+                            <a href="#" style="color: white;">Арендодателям |</a>
+                            <a href="#" style="color: white;">Вакансии |</a>
+                            <a href="#" style="color: white;">Наши аптеки |</a>
+                            <a href="#" style="color: white;">Загрузки рецепт |</a>
+                            <a href="#" style="color: white;">Рус /</a>
+                            <a href="#" style="color: white;">Uzb</a>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--header top start-->
+
+    <!--header middel start-->
+    <div class="header_middel">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-4">
+                    <div class="logo">
+                        <a href="index.html"><img src="../static/assets/img2/AFM MEDICAL.png" alt="" width="220px"></a>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-5">
+                    <div class="categories_menu">
+                        <div class="categories_title" style="width: 160px;">
+                            <h2 class="categori_toggle">Каталог</h2>
+                            <div class="categories_menu_inner">
+                                <ul>
+                                    <li><a href="about.html">Batafsil</a></li>
+                                    <li><a href="cart.html">Savat</a></li>
+                                    <li><a href="checkout.html">To'lov</a></li>
+                                    <li><a href="login.html">Kirish</a></li>
+                                    <li><a href="contact.html">Aloqa</a></li>
+                                    <li><a href="shop.html">Katalog</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="search_bar">
+                        <form action="#">
+                            <input placeholder="Поиск: " type="text">
+                            <button class="btn" style=".btn {color: black;}"><i
+                                    class="ion-ios-search-strong"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3">
+                    <div class="cart_area">
+                        <div class="wishlist_link">
+                            <a href="#" id="login-link">
+                                <p style="line-height: 15px !important;">
+                                    <i class="ion-person"
+                                        style="font-size: 2.3rem; display: flex; justify-content: center; align-items: center; margin-right: 10px;"></i>
+                                    <span>Личный кабинет</span>
+                                </p>
+                            </a>
+
+                            <!-- Birinchi Modal (Telefon raqamini kiritish) -->
+                            <div id="login-modal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close-btn" id="close-modal">&times;</span>
+                                    <h4 style="color: black;">Telefon raqamingizni kiriting</h4>
+                                    <p style="color: black;">SMS orqali tasdiqlash kodini yuboramiz</p>
+                                    <input type="text" id="phone" placeholder="+998 00 000-00-00" maxlength="17"
+                                        required>
+                                    <button id="get-code-btn">Kodni olish</button>
+                                    <p class="terms" style="color: black;">
+                                        Ro'yxatdan o'tish orqali shaxsiy ma'lumotlarni qayta ishlash siyosati bilan
+                                        tanishasiz
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Ikkinchi Modal (SMS kodini kiritish) -->
+                            <div id="login-modal2" class="modal">
+                                <div class="modal-content">
+                                    <span id="close-modal2" class="close"
+                                        style="font-size: 3rem; color:  red; padding-left: 330px;">&times;</span>
+                                    <p style="color: black; font-size: 1.3rem; margin-bottom: 10px;">SMS kodini
+                                        kiriting:</p>
+                                    <input type="text" id="sms-code" placeholder="SMS kodi">
+                                    <button id="submit-code-btn2">Kodni tasdiqlash</button>
+                                </div>
+                            </div>
+
+
+
+                            <style>
+                                /* Modal Styles */
+                                .modal,
+                                .modal2 {
+                                    display: none;
+                                    position: fixed;
+                                    z-index: 1;
+                                    left: 0;
+                                    top: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-color: rgba(0, 0, 0, 0.5);
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+
+                                .modal-content,
+                                .modal-content2 {
+                                    background-color: white;
+                                    padding: 25px;
+                                    border-radius: 10px;
+                                    width: 100%;
+                                    max-width: 400px;
+                                    /* Max width for large screens */
+                                    text-align: center;
+                                }
+
+                                .modal-content input,
+                                .modal-content2 input {
+                                    width: 100%;
+                                    padding: 12px;
+                                    margin: 15px 0;
+                                    font-size: 1rem;
+                                    border: 1px solid #ccc;
+                                    border-radius: 5px;
+                                }
+
+                                .modal-content button,
+                                .modal-content2 button {
+                                    width: 100%;
+                                    padding: 12px;
+                                    background-color: #2971f5;
+                                    color: white;
+                                    font-size: 1rem;
+                                    border: none;
+                                    border-radius: 5px;
+                                    cursor: pointer;
+                                }
+
+                                .modal-content button:hover,
+                                .modal-content2 button:hover {
+                                    background-color: #155de4;
+                                }
+
+                                .terms {
+                                    font-size: 0.9rem;
+                                    color: black !important;
+                                    margin-top: 10px;
+                                    line-height: 1.5;
+                                }
+
+                                .close-btn {
+                                    position: absolute;
+                                    top: 10px;
+                                    right: 10px;
+                                    font-size: 2.5rem;
+                                    font-weight: bold;
+                                    color: red;
+                                    cursor: pointer;
+                                }
+
+                                @media (max-width: 768px) {
+
+                                    .modal-content,
+                                    .modal-content2 {
+                                        width: 50%;
+                                        padding: 15px;
+                                    }
+
+                                    .modal-content input,
+                                    .modal-content2 input {
+                                        font-size: 1rem;
+                                        padding: 10px;
+                                    }
+
+                                    .modal-content button,
+                                    .modal-content2 button {
+                                        font-size: 0.8rem;
+                                        width: 150px;
+                                        margin-left: 40px;
+                                    }
+
+                                    .terms {
+                                        font-size: 0.8rem;
+                                    }
+
+                                    /* Close button adjustment */
+                                    .close-btn {
+                                        font-size: 28px;
+                                        top: 8px;
+                                        right: 15px;
+                                    }
+                                }
+
+                                @media (max-width: 480px) {
+
+                                    .modal-content,
+                                    .modal-content2 {
+                                        width: 65%;
+                                        /* Modal becomes almost full-width on very small screens */
+                                    }
+
+                                    .modal-content input,
+                                    .modal-content2 input {
+                                        font-size: 1.1rem;
+                                        padding: 8px;
+                                    }
+
+                                    .modal-content button,
+                                    .modal-content2 button {
+                                        font-size: 0.8rem;
+                                        width: 150px;
+                                        margin-left: 40px;
+                                    }
+
+                                    .terms {
+                                        font-size: 0.75rem;
+                                    }
+
+                                    /* Close button adjustment */
+                                    .close-btn {
+                                        font-size: 26px;
+                                        top: 5px;
+                                        right: 10px;
+                                    }
+                                }
+                            </style>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    const modal1 = document.getElementById('login-modal');
+                                    const modal2 = document.getElementById('login-modal2');
+                                    const closeModal1 = document.getElementById('close-modal');
+                                    const closeModal2 = document.getElementById('close-modal2');
+                                    const getCodeButton = document.getElementById('get-code-btn');
+                                    const phoneInput = document.getElementById('phone');
+                                    const smsCodeInput = document.getElementById('sms-code');
+                                    const submitCodeButton = document.getElementById('submit-code-btn2');
+
+                                    // Birinchi modalni ko'rsatish
+                                    document.getElementById('login-link').addEventListener('click', function (event) {
+                                        event.preventDefault();
+                                        modal1.style.display = 'flex';
+                                    });
+
+                                    // Birinchi modalni yopish
+                                    closeModal1.addEventListener('click', function () {
+                                        modal1.style.display = 'none'; // Birinchi modalni yopish
+                                    });
+
+                                    // Ikkinchi modalni yopish
+                                    closeModal2.addEventListener('click', function () {
+                                        modal2.style.display = 'none'; // Ikkinchi modalni yopish
+                                    });
+
+
+                                    // "Kodni olish" tugmasi bosilganda ikkinchi modalni ko'rsatish
+                                    getCodeButton.addEventListener('click', function () {
+
+                                        const phoneNumber = phoneInput.value;
+
+                                        const phoneRegex = /^\+998\s\d{2}\s\d{3}-\d{2}-\d{2}$/;
+
+                                        modal1.style.display = 'none';
+                                        modal2.style.display = 'flex';
+                                    });
+
+                                    // "Kodni tasdiqlash" tugmasi bosilganda SMS kodini tasdiqlash
+                                    submitCodeButton.addEventListener('click', function () {
+                                        const smsCode = smsCodeInput.value;
+
+                                        // SMS kodining formatini tekshirish
+                                        const smsCodeRegex = /^\d{6}$/;
+                                        if (smsCodeRegex.test(smsCode)) {
+                                            modal2.style.display = 'none';
+                                        }
+                                    });
+                                });
+
+
+                            </script>
+
+                        </div>
+
+                        <div class="wishlist_link" style="margin-left: 15px;">
+                            <a href="#">
+                                <p style="line-height: 15px !important;"><i class="ion-headphone" style="font-size: 2.3rem; display: flex;
+                            justify-content: center;align-items: center; margin-right: 10px;"></i> <span> <span
+                                            style="font-size: 12px; 
+                            line-height: 10px;">
+                                            Callcenter</span>
+                                        <span
+                                            style="display: flex; justify-content: center; align-items: center;">1080
+                                        </span></span></p>
+                            </a>
+                        </div>
+                        <div class="cart_link" style="margin-top: 10px;">
+                            <a href="javascript:void(0)" style="color: black !important; font-weight: 400; "><i
+                                    class="ion-ios-cart"></i>Корзина</a>
+                            <span class="cart_count">2</span>
+                            <!--mini cart-->
+                            <div class="mini_cart">
+                                <div class="items_nunber">
+                                    <span>2 Items in Cart</span>
+                                </div>
+                                <div class="cart_button checkout">
+                                    <a href="checkout.html">Proceed to Checkout</a>
+                                </div>
+                                <div class="cart_item">
+                                    <div class="cart_img">
+                                        <a href="#"><img src="../static/assets/img/cart/cart1.jpg" alt=""></a>
+                                    </div>
+                                    <div class="cart_info">
+                                        <a href="#">Mr.Coffee 12-Cup</a>
+                                        <form action="#">
+                                            <input min="0" max="100" type="number">
+                                            <span>$60.00</span>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="cart_item">
+                                    <div class="cart_img">
+                                        <a href="#"><img src="../static/assets/img/cart/cart2.jpg" alt=""></a>
+                                    </div>
+                                    <div class="cart_info">
+                                        <a href="#">Lid Cover Cookware</a>
+                                        <form action="#">
+                                            <input min="0" max="100" type="number">
+                                            <span>$160.00</span>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="cart_button view_cart">
+                                    <a href="#">View and Edit Cart</a>
+                                </div>
+                            </div>
+                            <!--mini cart end-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--header middel end-->
+
+    <!--header bottom satrt-->
+    <div class="header_bottom sticky-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-5">
+                    <!-- <div class="categories_menu">
+                        <div class="categories_title" style="width: 170px;">
+                            <h2 class="categori_toggle">Каталог</h2>
+                        </div>
+                        <div class="categories_menu_inner">
+                            <ul>
+                                <li><a href="about.html">Batafsil</a></li>
+                                <li><a href="cart.html">Savat</a></li>
+                                <li><a href="checkout.html">To'lov</a></li>
+                                <li><a href="login.html">Kirish</a></li>
+                                <li><a href="contact.html">Aloqa</a></li>
+                                <li><a href="shop.html">Katalog</a></li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- <div class="col-lg-2">
+                    <div class="contact_phone">
+                        <div class="contact_icone">
+                            <span class="pe-7s-headphones"></span>
+                        </div>
+                        <div class="contact_number">
+                            <p  style="color: #c51f30;">Call center</p>
+                            <span>1080</span>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!--header bottom end-->
+</header>
+<!-- header tugadi -->
+        <br>
+    
+        
+            <!--header area end-->
+            
+            <!--breadcrumbs area start-->
+            <div class="breadcrumbs_area">
+                <div class="container">   
+                    <div class="breadcrumbs_inner">  
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="breadcrumb_content">
+                                    <h3>shop</h3>
+                                    <ul>
+                                        <li><a href="index.html">home</a></li>
+                                        <li><i class="fa fa-angle-right"></i></li>
+                                        <li>shop</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>         
+            </div>
+            <!--breadcrumbs area end-->
+            
+            <!--shop wrapper start-->
+            <div class="shop_wrapper shop_reverse">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12">
+                            <div class="sidebar_widget">
+                                <!--widget color start-->
+                                <div class="widget_list widget_color">
+                                    <h3>Select By Color</h3>
+                                    <ul>
+                                        <li><a href="#">Black </a></li>
+
+                                        <li><a href="#">Orange </a></li>
+
+                                        <li> <a href="#">Blue</a></li>
+
+                                        <li><a href="#">Yellow</a></li>
+
+                                        <li><a href="#">pink</a></li>
+
+                                        <li><a href="#">green</a></li>
+                                    </ul>
+                                </div>
+                                <!--widget color start-->
+                                
+                                <!--manufacturer start-->
+                                <div class="widget_list manufacturer">
+                                    <h3>Manufacturer</h3>
+                                    <ul>
+                                        <li><a href="#">Fisher-Price </a></li>
+
+                                        <li><a href="#">WolVol </a></li>
+
+                                        <li> <a href="#"> K'NEX </a></li>
+
+                                        <li><a href="#">Liberty Imports</a></li>
+
+                                        <li><a href="#">ALEX Toys</a></li>
+                                    </ul>
+                                </div>
+                                <!--manufacturer start-->
+                                
+                                <!--widget  price start-->
+                                <div class="widget_list price">
+                                    <h3>Pricer</h3>
+                                    <ul>
+                                        <li><a href="#">$0.00 - $99.99 </a></li>
+
+                                        <li><a href="#">$100.00 and above </a></li>
+                                    </ul>
+                                </div>
+                                <!--widget  price start-->
+                                
+                                <!--popular tags area-->
+                                <div class="widget_list tag_widget  ">
+                                    <h3>popular tags</h3>
+                                    <div class="block_tags">
+                                        <a href="#">ipod</a>
+                                        <a href="#">sam sung</a>
+                                        <a href="#">apple</a>
+                                        <a href="#">iphone 5s</a>
+                                        <a href="#">superdrive</a>
+                                        <a href="#">shuffle</a>
+                                        <a href="#">nano</a>
+                                        <a href="#">iphone 4s</a>
+                                        <a href="#">canon</a>
+                                    </div>
+                                </div>
+                                <!--popular tags end-->
+                                
+                                <!--widget banner start-->
+                                <div class="widget_list banner">
+                                    <div class="banner_thumb">
+                                        <a href="#"><img src="../static/assets/img/banner/banner9.png" alt=""></a>
+                                    </div>
+                                </div>
+                                <!--widget banner end-->
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-12">
+                            <!--shop toolbar start-->
+                            <div class="shop_toolbar">
+
+                                <div class="list_button">
+                                    <ul class="nav" role="tablist">
+                                        <li>
+                                            <a data-bs-toggle="tab" href="#large" role="tab" aria-controls="large" aria-selected="true"><i class="ion-grid"></i></a>
+                                        </li>
+                                        <li>
+                                            <a class="active"  data-bs-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false"><i class="ion-android-menu"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="select_option number">
+                                    <form action="#">
+                                        <label>Show:</label>
+                                        <select name="orderby" id="short">
+                                            <option selected value="1">9</option>
+                                            <option value="1">19</option>
+                                            <option value="1">30</option>
+                                        </select>
+                                    </form>
+                                </div>
+                                <div class="select_option">
+                                    <form action="#">
+                                        <label>Sort By</label>
+                                        <select name="orderby" id="short1">
+                                            <option selected value="1">Position</option>
+                                            <option value="1">Price: Lowest</option>
+                                            <option value="1">Price: Highest</option>
+                                            <option value="1">Product Name:Z</option>
+                                            <option value="1">Sort by price:low</option>
+                                            <option value="1">Product Name: Z</option>
+                                            <option value="1">In stock</option>
+                                            <option value="1">Product Name: A</option>
+                                            <option value="1">In stock</option>
+                                        </select>
+                                    </form>
+                                </div>
+                            </div>
+                            <!--shop toolbar end-->
+                             <!--shop tab product-->
+                            <div class="shop_tab_product">   
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade " id="large" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                                <div class="single_product"> 
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product6.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Game Controller</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                                <div class="single_product"> 
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product7.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Mpow Bluetoothp</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                                <div class="single_product"> 
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product8.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">	Bonna 21 pixelsf</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                                <div class="single_product"> 
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product9.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Aicok Stand Mixet</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                                <div class="single_product"> 
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product10.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Game Controller</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                                <div class="single_product"> 
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product11.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Cuisinart DCC-3200</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                                <div class="single_product"> 
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product12.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Classic 17-Piece</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                                <div class="single_product"> 
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product13.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Game Controller</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                                <div class="single_product"> 
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product14.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Aicok Stand Mixet</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                        </div>     
+                                    </div>
+                                    <div class="tab-pane fade show active" id="list" role="tabpanel">
+                                        <div class="single_product list_item">
+                                            <div class="row align-items-center">   
+                                                <div class="col-lg-4 col-md-5">
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product14.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                                <div class="col-lg-8 col-md-7">
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Aicok Stand Mixet</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_description">
+                                                            <p>Maybe Smaller than regular Size, PLS CHOOSE THE SIZE 1-2 Size UP than YOU USUALLY WEAR, Now We Will Give the 2XL, 3XL, 4XL for Choices (Note:The Generic Amazon Size Chart is not our size) Update ON May 14,2016	</p>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="single_product list_item">
+                                            <div class="row align-items-center">   
+                                                <div class="col-lg-4 col-md-5">
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product16.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                                <div class="col-lg-8 col-md-7">
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Bonna 21 mega pixelsg</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_description">
+                                                            <p>Maybe Smaller than regular Size, PLS CHOOSE THE SIZE 1-2 Size UP than YOU USUALLY WEAR, Now We Will Give the 2XL, 3XL, 4XL for Choices (Note:The Generic Amazon Size Chart is not our size) Update ON May 14,2016	</p>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div> 
+                                        <div class="single_product list_item">
+                                            <div class="row align-items-center">   
+                                                <div class="col-lg-4 col-md-5">
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product17.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                                <div class="col-lg-8 col-md-7">
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Aicok Stand Mixet</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_description">
+                                                            <p>Maybe Smaller than regular Size, PLS CHOOSE THE SIZE 1-2 Size UP than YOU USUALLY WEAR, Now We Will Give the 2XL, 3XL, 4XL for Choices (Note:The Generic Amazon Size Chart is not our size) Update ON May 14,2016	</p>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div> 
+                                        <div class="single_product list_item">
+                                            <div class="row align-items-center">   
+                                                <div class="col-lg-4 col-md-5">
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product18.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                                <div class="col-lg-8 col-md-7">
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Cutlery Knife Set</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_description">
+                                                            <p>Maybe Smaller than regular Size, PLS CHOOSE THE SIZE 1-2 Size UP than YOU USUALLY WEAR, Now We Will Give the 2XL, 3XL, 4XL for Choices (Note:The Generic Amazon Size Chart is not our size) Update ON May 14,2016	</p>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div> 
+                                        <div class="single_product list_item">
+                                            <div class="row align-items-center">   
+                                                <div class="col-lg-4 col-md-5">
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product19.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                                <div class="col-lg-8 col-md-7">
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Aicok Stand Mixet</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_description">
+                                                            <p>Maybe Smaller than regular Size, PLS CHOOSE THE SIZE 1-2 Size UP than YOU USUALLY WEAR, Now We Will Give the 2XL, 3XL, 4XL for Choices (Note:The Generic Amazon Size Chart is not our size) Update ON May 14,2016	</p>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div> 
+                                        <div class="single_product list_item">
+                                            <div class="row align-items-center">   
+                                                <div class="col-lg-4 col-md-5">
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product20.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                                <div class="col-lg-8 col-md-7">
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Aicok Stand Mixet</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_description">
+                                                            <p>Maybe Smaller than regular Size, PLS CHOOSE THE SIZE 1-2 Size UP than YOU USUALLY WEAR, Now We Will Give the 2XL, 3XL, 4XL for Choices (Note:The Generic Amazon Size Chart is not our size) Update ON May 14,2016	</p>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div> 
+                                        <div class="single_product list_item">
+                                            <div class="row align-items-center">   
+                                                <div class="col-lg-4 col-md-5">
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product21.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                                <div class="col-lg-8 col-md-7">
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Cutlery Knife Set</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_description">
+                                                            <p>Maybe Smaller than regular Size, PLS CHOOSE THE SIZE 1-2 Size UP than YOU USUALLY WEAR, Now We Will Give the 2XL, 3XL, 4XL for Choices (Note:The Generic Amazon Size Chart is not our size) Update ON May 14,2016	</p>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div> 
+                                        <div class="single_product list_item">
+                                            <div class="row align-items-center">   
+                                                <div class="col-lg-4 col-md-5">
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product22.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                                <div class="col-lg-8 col-md-7">
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Aicok Stand Mixet</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_description">
+                                                            <p>Maybe Smaller than regular Size, PLS CHOOSE THE SIZE 1-2 Size UP than YOU USUALLY WEAR, Now We Will Give the 2XL, 3XL, 4XL for Choices (Note:The Generic Amazon Size Chart is not our size) Update ON May 14,2016	</p>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div> 
+                                        <div class="single_product list_item">
+                                            <div class="row align-items-center">   
+                                                <div class="col-lg-4 col-md-5">
+                                                    <div class="product_thumb">
+                                                         <a href="product-details.html"><img src="../static/assets/img/product/product23.jpg" alt=""></a>
+                                                         <div class="btn_quickview">
+                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="Quick View"><i class="ion-ios-eye"></i></a>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                                <div class="col-lg-8 col-md-7">
+                                                    <div class="product_content">   
+                                                        <div class="product_ratting">
+                                                            <ul>
+                                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <h3><a href="product-details.html">Cutlery Knife Set</a></h3>
+                                                        <div class="product_price">
+                                                            <span class="current_price">$23.00</span>
+                                                        </div>
+                                                        <div class="product_description">
+                                                            <p>Maybe Smaller than regular Size, PLS CHOOSE THE SIZE 1-2 Size UP than YOU USUALLY WEAR, Now We Will Give the 2XL, 3XL, 4XL for Choices (Note:The Generic Amazon Size Chart is not our size) Update ON May 14,2016	</p>
+                                                        </div>
+                                                        <div class="product_action">
+                                                            <ul>
+                                                                <li class="product_cart"><a href="cart.html" title="Add to Cart">Add to Cart</a></li>
+                                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                                <li class="add_links"><a href="compare.html" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>                      
+                                    </div>
+                                </div>
+                            </div>    
+                            <!--shop tab product end-->
+                            
+                            <!--pagination style start--> 
+                            <div class="pagination_style">
+                                <ul>
+                                    <li class="current_number">1</li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                            </div>
+                            <!--pagination style end--> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--shop wrapper end-->
+    
+   
+            
+            <br><br><br>
+            
+       <!-- footer start berdik -->
+    <div class="shipping_area shipping_contact" style="background-color: #15315a;">
+        <div class="container">
+            <div class="shipping_contact">
+                <div class="row">
+                    <div class="footer_area">
+                        <div class="container">
+                            <div class="footer_top">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-8">
+                                        <div class="single_footer">
+                                            <div class="footer_logo">
+                                                <img src="../static/assets/img2/AFM MEDICAL oq.png" alt="" width="220">
+                                            </div>
+                                            <div class="footer_contact">
+                                                <ul>
+                                                    <li style="color: white;"><i class="ion-location"
+                                                            style="color: white;"></i>
+                                                        Andijon shahar istiqlol ko'chasi 27 uy</li>
+                                                    <li style="color: white;"><i class="ion-ios-telephone"
+                                                            style="color: white;"></i> 33 991 99 91</li>
+                                                    <li style="color: white;"><i class="ion-ios-email"
+                                                            style="color: white;"></i> <a href="#"
+                                                            style="color: white;">Manzil@akmalfarm.com</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-6">
+                                        <div class="single_footer">
+                                            <h3 style="color: white;">Покупателю</h3>
+                                            <ul>
+                                                <a href="#" style="color: white;font-size: 12px;">Как заказать
+                                                    лекарства?</a>
+                                                <a href="#" style="color: white;font-size: 12px;">Доставка и оплата</a>
+                                                <a href="#" style="color: white;font-size: 12px;">Популярные вопросы</a>
+                                                <a href="#" style="color: white;font-size: 12px;">Справочники</a>
+                                                <a href="#" style="color: white;font-size: 12px;">Пользовательское
+                                                    соглашение</a>
+                                                <a href="#" style="color: white;font-size: 12px;">Условия возврата
+                                                    товара</a>
+                                                <a href="#" style="color: white;font-size: 12px;">Новости и статьи</a>
+                                                <a href="#" style="color: white;font-size: 12px;">Программа
+                                                    лояльности</a>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-4 col-sm-6">
+                                        <div class="single_footer">
+                                            <h3 style="color: white;">Компания</h3>
+                                            <ul>
+                                                <a href="#" style="color: white; font-size: 0.8rem;">О компании</a>
+                                                <a href="#" style="color: white;font-size: 0.8rem;">Наши аптеки</a>
+                                                <a href="#" style="color: white;font-size: 0.8rem;">Сертификаты</a>
+                                                <a href="#" style="color: white;font-size: 0.8rem;">Контакты</a>
+                                            </ul> <br>
+                                            <h3 style="color: white;">Akmal Farm Medical</h3>
+                                            <ul>
+                                                <a href="#" style="color: white; font-size: 11px;">Следите за
+                                                    обновлениями</a>
+                                                <a href="#" style="color: white; font-size: 11px;">Akmal Farm Medical в
+                                                    социальных сетях</a>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-8">
+                                        <div class="single_footer">
+                                            <div class="location-container">
+                                                <div class="map-wrapper">
+                                                    <iframe
+                                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434508616!2d144.95373531531676!3d-37.81627917975151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577a63485a1189d!2sFederation%20Square!5e0!3m2!1sen!2s!4v1619560513329!5m2!1sen!2s"
+                                                        width="1900" height="300" style="border:0;" allowfullscreen=""
+                                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                                    </iframe>
+                                                </div>
+                                            </div>
+                                            <style>
+                                                .location-container {
+                                                    width: 500px;
+                                                    margin: 0px auto;
+                                                    padding: 20px;
+                                                    border-radius: 10px;
+                                                    text-align: center;
+                                                }
+
+                                                .location-container h1 {
+                                                    font-size: 2rem;
+                                                    margin-bottom: 10px;
+                                                    color: #333;
+                                                }
+
+                                                .location-container p {
+                                                    font-size: 1rem;
+                                                    margin-bottom: 20px;
+                                                    color: #555;
+                                                }
+
+                                                .map-wrapper {
+                                                    overflow: hidden;
+                                                    border-radius: 10px;
+                                                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                                                }
+
+                                                .map-wrapper iframe {
+                                                    width: 800px;
+                                                    height: 300px;
+                                                    border: none;
+                                                    border-radius: 10px;
+                                                }
+                                            </style>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- footer qismini tugatdik -->
+            
+           
+           <!-- footer start berdik -->
+    <div class="shipping_area shipping_contact" style="background-color: #15315a;">
+        <div class="container">
+            <div class="shipping_contact">
+                <div class="row">
+                    <div class="footer_area">
+                        <div class="container">
+                            <div class="footer_top">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-8">
+                                        <div class="single_footer">
+                                            <div class="footer_logo">
+                                                <img src="../static/assets/img2/AFM MEDICAL oq.png" alt="" width="220">
+                                            </div>
+                                            <div class="footer_contact">
+                                                <ul>
+                                                    <li style="color: white;"><i class="ion-location"
+                                                            style="color: white;"></i>
+                                                        Andijon shahar istiqlol ko'chasi 27 uy</li>
+                                                    <li style="color: white;"><i class="ion-ios-telephone"
+                                                            style="color: white;"></i> 33 991 99 91</li>
+                                                    <li style="color: white;"><i class="ion-ios-email"
+                                                            style="color: white;"></i> <a href="#"
+                                                            style="color: white;">Manzil@akmalfarm.com</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-6">
+                                        <div class="single_footer">
+                                            <h3 style="color: white;">Покупателю</h3>
+                                            <ul>
+                                                <a href="#" style="color: white;font-size: 12px;">Как заказать
+                                                    лекарства?</a>
+                                                <a href="#" style="color: white;font-size: 12px;">Доставка и оплата</a>
+                                                <a href="#" style="color: white;font-size: 12px;">Популярные вопросы</a>
+                                                <a href="#" style="color: white;font-size: 12px;">Справочники</a>
+                                                <a href="#" style="color: white;font-size: 12px;">Пользовательское
+                                                    соглашение</a>
+                                                <a href="#" style="color: white;font-size: 12px;">Условия возврата
+                                                    товара</a>
+                                                <a href="#" style="color: white;font-size: 12px;">Новости и статьи</a>
+                                                <a href="#" style="color: white;font-size: 12px;">Программа
+                                                    лояльности</a>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-4 col-sm-6">
+                                        <div class="single_footer">
+                                            <h3 style="color: white;">Компания</h3>
+                                            <ul>
+                                                <a href="#" style="color: white; font-size: 0.8rem;">О компании</a>
+                                                <a href="#" style="color: white;font-size: 0.8rem;">Наши аптеки</a>
+                                                <a href="#" style="color: white;font-size: 0.8rem;">Сертификаты</a>
+                                                <a href="#" style="color: white;font-size: 0.8rem;">Контакты</a>
+                                            </ul> <br>
+                                            <h3 style="color: white;">Akmal Farm Medical</h3>
+                                            <ul>
+                                                <a href="#" style="color: white; font-size: 11px;">Следите за
+                                                    обновлениями</a>
+                                                <a href="#" style="color: white; font-size: 11px;">Akmal Farm Medical в
+                                                    социальных сетях</a>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-8">
+                                        <div class="single_footer">
+                                            <div class="location-container">
+                                                <div class="map-wrapper">
+                                                    <iframe
+                                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434508616!2d144.95373531531676!3d-37.81627917975151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577a63485a1189d!2sFederation%20Square!5e0!3m2!1sen!2s!4v1619560513329!5m2!1sen!2s"
+                                                        width="1900" height="300" style="border:0;" allowfullscreen=""
+                                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                                    </iframe>
+                                                </div>
+                                            </div>
+                                            <style>
+                                                .location-container {
+                                                    width: 500px;
+                                                    margin: 0px auto;
+                                                    padding: 20px;
+                                                    border-radius: 10px;
+                                                    text-align: center;
+                                                }
+
+                                                .location-container h1 {
+                                                    font-size: 2rem;
+                                                    margin-bottom: 10px;
+                                                    color: #333;
+                                                }
+
+                                                .location-container p {
+                                                    font-size: 1rem;
+                                                    margin-bottom: 20px;
+                                                    color: #555;
+                                                }
+
+                                                .map-wrapper {
+                                                    overflow: hidden;
+                                                    border-radius: 10px;
+                                                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                                                }
+
+                                                .map-wrapper iframe {
+                                                    width: 800px;
+                                                    height: 300px;
+                                                    border: none;
+                                                    border-radius: 10px;
+                                                }
+
+                                                /* Responsive Styles */
+
+                                                /* For tablets and smaller devices */
+                                                @media (max-width: 768px) {
+                                                    .location-container {
+                                                        width: 90%;
+                                                        /* Reduce the width to fit better on tablets */
+                                                        padding: 15px;
+                                                        /* Adjust padding for smaller screens */
+                                                    }
+
+                                                    .location-container h1 {
+                                                        font-size: 1.75rem;
+                                                        /* Slightly smaller heading */
+                                                    }
+
+                                                    .location-container p {
+                                                        font-size: 0.95rem;
+                                                        /* Smaller paragraph font */
+                                                    }
+
+                                                    .map-wrapper iframe {
+                                                        width: 100%;
+                                                        /* Make the iframe responsive */
+                                                        height: 250px;
+                                                        /* Adjust iframe height for tablets */
+                                                    }
+                                                }
+
+                                                /* For mobile devices */
+                                                @media (max-width: 480px) {
+                                                    .location-container {
+                                                        width: 100%;
+                                                        /* Full width on mobile devices */
+                                                        padding: 10px;
+                                                        /* Smaller padding on mobile */
+                                                    }
+
+                                                    .location-container h1 {
+                                                        font-size: 1.5rem;
+                                                        /* Even smaller heading for mobile */
+                                                    }
+
+                                                    .location-container p {
+                                                        font-size: 0.85rem;
+                                                        /* Smaller paragraph font */
+                                                    }
+
+                                                    .map-wrapper iframe {
+                                                        width: 100%;
+                                                        /* Full width iframe */
+                                                        height: 200px;
+                                                        /* Smaller iframe height for mobile */
+                                                    }
+                                                }
+                                            </style>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer qismini tugatdik -->
+
+		<!-- all js here -->
+        <script src="../static/assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="../static/assets/js/popper.js"></script>
+        <script src="../static/assets/js/bootstrap.min.js"></script>
+        <script src="../static/assets/js/plugins.js"></script>
+        <script src="../static/assets/js/main.js"></script>
+    </body>
+</html>

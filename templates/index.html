@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akmal Farm Medical</title>
+    <link rel="shortcut icon" href="../static/assets/img2/AFM MEDICAL — копия.png">
+    <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/assets/css/bundle.css">
+    <link rel="stylesheet" href="../static/assets/css/plugins.css">
+    <link rel="stylesheet" href="../static/assets/css/style.css">
+    <link rel="stylesheet" href="../static/assets/css/responsive.css">
+    <script src="../static/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!-- header boshlandi -->
+    <header class="header_area">
+        <div class="header_top">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-6 col-md-6">
+                        <div class="top_right text-end" style="justify-content: right !important;">
+                            <ul class="ui1">
+                                <a href="about.html" style="color: white;">О Нас |</a>
+                                <a href="#" style="color: white;">Арендодателям |</a>
+                                <a href="#" style="color: white;">Вакансии |</a>
+                                <a href="#" style="color: white;">Наши аптеки |</a>
+                                <a href="#" style="color: white;">Загрузки рецепт |</a>
+                                <a href="#" style="color: white;">Рус /</a>
+                                <a href="#" style="color: white;">Uzb</a>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--header top start-->
+
+        <!--header middel start-->
+        <div class="header_middel">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="logo">
+                            <a href="index.html"><img src="../static/assets/img2/AFM MEDICAL.png" alt="" width="220px"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-5">
+                        <div class="categories_menu">
+                            <div class="categories_title" style="width: 160px;">
+                                <h2 class="categori_toggle">Каталог</h2>
+                                <div class="categories_menu_inner">
+                                    <ul>
+                                        <li><a href="about.html">Batafsil</a></li>
+                                        <li><a href="cart.html">Savat</a></li>
+                                        <li><a href="checkout.html">To'lov</a></li>
+                                        <li><a href="login.html">Kirish</a></li>
+                                        <li><a href="contact.html">Aloqa</a></li>
+                                        <li><a href="shop.html">Katalog</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="search_bar">
+                            <form action="#">
+                                <input placeholder="Поиск: " type="text">
+                                <button class="btn" style=".btn {color: black;}"><i
+                                        class="ion-ios-search-strong"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3">
+                        <div class="cart_area">
+                            <div class="wishlist_link">
+                                <a href="#" id="login-link">
+                                    <p style="line-height: 15px !important;">
+                                        <i class="ion-person"
+                                            style="font-size: 2.3rem; display: flex; justify-content: center; align-items: center; margin-right: 10px;"></i>
+                                        <span>Личный кабинет</span>
+                                    </p>
+                                </a>
+
+                                <!-- Birinchi Modal (Telefon raqamini kiritish) -->
+                                <div id="login-modal" class="modal">
+                                    <div class="modal-content">
+                                        <span class="close-btn" id="close-modal">&times;</span>
+                                        <h4 style="color: black;">Telefon raqamingizni kiriting</h4>
+                                        <p style="color: black;">SMS orqali tasdiqlash kodini yuboramiz</p>
+                                        <input type="text" id="phone" placeholder="+998 00 000-00-00" maxlength="17"
+                                            required>
+                                        <button id="get-code-btn">Kodni olish</button>
+                                        <p class="terms" style="color: black;">
+                                            Ro'yxatdan o'tish orqali shaxsiy ma'lumotlarni qayta ishlash siyosati bilan
+                                            tanishasiz
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Ikkinchi Modal (SMS kodini kiritish) -->
+                                <div id="login-modal2" class="modal">
+                                    <div class="modal-content">
+                                        <span id="close-modal2" class="close"
+                                            style="font-size: 3rem; color:  red; padding-left: 330px;">&times;</span>
+                                        <p style="color: black; font-size: 1.3rem; margin-bottom: 10px;">SMS kodini
+                                            kiriting:</p>
+                                        <input type="text" id="sms-code" placeholder="SMS kodi">
+                                        <button id="submit-code-btn2">Kodni tasdiqlash</button>
+                                    </div>
+                                </div>
+
+
+
+                                <style>
+                                    /* Modal Styles */
+                                    .modal,
+                                    .modal2 {
+                                        display: none;
+                                        position: fixed;
+                                        z-index: 1;
+                                        left: 0;
+                                        top: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        background-color: rgba(0, 0, 0, 0.5);
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+
+                                    .modal-content,
+                                    .modal-content2 {
+                                        background-color: white;
+                                        padding: 25px;
+                                        border-radius: 10px;
+                                        width: 100%;
+                                        max-width: 400px;
+                                        /* Max width for large screens */
+                                        text-align: center;
+                                    }
+
+                                    .modal-content input,
+                                    .modal-content2 input {
+                                        width: 100%;
+                                        padding: 12px;
+                                        margin: 15px 0;
+                                        font-size: 1rem;
+                                        border: 1px solid #ccc;
+                                        border-radius: 5px;
+                                    }
+
+                                    .modal-content button,
+                                    .modal-content2 button {
+                                        width: 100%;
+                                        padding: 12px;
+                                        background-color: #2971f5;
+                                        color: white;
+                                        font-size: 1rem;
+                                        border: none;
+                                        border-radius: 5px;
+                                        cursor: pointer;
+                                    }
+
+                                    .modal-content button:hover,
+                                    .modal-content2 button:hover {
+                                        background-color: #155de4;
+                                    }
+
+                                    .terms {
+                                        font-size: 0.9rem;
+                                        color: black !important;
+                                        margin-top: 10px;
+                                        line-height: 1.5;
+                                    }
+
+                                    .close-btn {
+                                        position: absolute;
+                                        top: 10px;
+                                        right: 10px;
+                                        font-size: 2.5rem;
+                                        font-weight: bold;
+                                        color: red;
+                                        cursor: pointer;
+                                    }
+
+                                    @media (max-width: 768px) {
+
+                                        .modal-content,
+                                        .modal-content2 {
+                                            width: 50%;
+                                            padding: 15px;
+                                        }
+
+                                        .modal-content input,
+                                        .modal-content2 input {
+                                            font-size: 1rem;
+                                            padding: 10px;
+                                        }
+
+                                        .modal-content button,
+                                        .modal-content2 button {
+                                            font-size: 0.8rem;
+                                            width: 150px;
+                                            margin-left: 40px;
+                                        }
+
+                                        .terms {
+                                            font-size: 0.8rem;
+                                        }
+
+                                        /* Close button adjustment */
+                                        .close-btn {
+                                            font-size: 28px;
+                                            top: 8px;
+                                            right: 15px;
+                                        }
+                                    }
+
+                                    @media (max-width: 480px) {
+
+                                        .modal-content,
+                                        .modal-content2 {
+                                            width: 65%;
+                                            /* Modal becomes almost full-width on very small screens */
+                                        }
+
+                                        .modal-content input,
+                                        .modal-content2 input {
+                                            font-size: 1.1rem;
+                                            padding: 8px;
+                                        }
+
+                                        .modal-content button,
+                                        .modal-content2 button {
+                                            font-size: 0.8rem;
+                                            width: 150px;
+                                            margin-left: 40px;
+                                        }
+
+                                        .terms {
+                                            font-size: 0.75rem;
+                                        }
+
+                                        /* Close button adjustment */
+                                        .close-btn {
+                                            font-size: 26px;
+                                            top: 5px;
+                                            right: 10px;
+                                        }
+                                    }
+                                </style>
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', function () {
+                                        const modal1 = document.getElementById('login-modal');
+                                        const modal2 = document.getElementById('login-modal2');
+                                        const closeModal1 = document.getElementById('close-modal');
+                                        const closeModal2 = document.getElementById('close-modal2');
+                                        const getCodeButton = document.getElementById('get-code-btn');
+                                        const phoneInput = document.getElementById('phone');
+                                        const smsCodeInput = document.getElementById('sms-code');
+                                        const submitCodeButton = document.getElementById('submit-code-btn2');
+
+                                        // Birinchi modalni ko'rsatish
+                                        document.getElementById('login-link').addEventListener('click', function (event) {
+                                            event.preventDefault();
+                                            modal1.style.display = 'flex';
+                                        });
+
+                                        // Birinchi modalni yopish
+                                        closeModal1.addEventListener('click', function () {
+                                            modal1.style.display = 'none'; // Birinchi modalni yopish
+                                        });
+
+                                        // Ikkinchi modalni yopish
+                                        closeModal2.addEventListener('click', function () {
+                                            modal2.style.display = 'none'; // Ikkinchi modalni yopish
+                                        });
+
+
+                                        // "Kodni olish" tugmasi bosilganda ikkinchi modalni ko'rsatish
+                                        getCodeButton.addEventListener('click', function () {
+
+                                            const phoneNumber = phoneInput.value;
+
+                                            const phoneRegex = /^\+998\s\d{2}\s\d{3}-\d{2}-\d{2}$/;
+
+                                            modal1.style.display = 'none';
+                                            modal2.style.display = 'flex';
+                                        });
+
+                                        // "Kodni tasdiqlash" tugmasi bosilganda SMS kodini tasdiqlash
+                                        submitCodeButton.addEventListener('click', function () {
+                                            const smsCode = smsCodeInput.value;
+
+                                            // SMS kodining formatini tekshirish
+                                            const smsCodeRegex = /^\d{6}$/;
+                                            if (smsCodeRegex.test(smsCode)) {
+                                                modal2.style.display = 'none';
+                                            }
+                                        });
+                                    });
+
+
+                                </script>
+
+                            </div>
+
+                            <div class="wishlist_link" style="margin-left: 15px;">
+                                <a href="#">
+                                    <p style="line-height: 15px !important;"><i class="ion-headphone" style="font-size: 2.3rem; display: flex;
+                                justify-content: center;align-items: center; margin-right: 10px;"></i> <span> <span
+                                                style="font-size: 12px; 
+                                line-height: 10px;">
+                                                Callcenter</span>
+                                            <span
+                                                style="display: flex; justify-content: center; align-items: center;">1080
+                                            </span></span></p>
+                                </a>
+                            </div>
+                            <div class="cart_link" style="margin-top: 10px;">
+                                <a href="javascript:void(0)" style="color: black !important; font-weight: 400; "><i
+                                        class="ion-ios-cart"></i>Корзина</a>
+                                <span class="cart_count">2</span>
+                                <!--mini cart-->
+                                <div class="mini_cart">
+                                    <div class="items_nunber">
+                                        <span>2 Items in Cart</span>
+                                    </div>
+                                    <div class="cart_button checkout">
+                                        <a href="checkout.html">Proceed to Checkout</a>
+                                    </div>
+                                    <div class="cart_item">
+                                        <div class="cart_img">
+                                            <a href="#"><img src="../static/assets/img/cart/cart1.jpg" alt=""></a>
+                                        </div>
+                                        <div class="cart_info">
+                                            <a href="#">Mr.Coffee 12-Cup</a>
+                                            <form action="#">
+                                                <input min="0" max="100" type="number">
+                                                <span>$60.00</span>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="cart_item">
+                                        <div class="cart_img">
+                                            <a href="#"><img src="../static/assets/img/cart/cart2.jpg" alt=""></a>
+                                        </div>
+                                        <div class="cart_info">
+                                            <a href="#">Lid Cover Cookware</a>
+                                            <form action="#">
+                                                <input min="0" max="100" type="number">
+                                                <span>$160.00</span>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="cart_button view_cart">
+                                        <a href="#">View and Edit Cart</a>
+                                    </div>
+                                </div>
+                                <!--mini cart end-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--header middel end-->
+
+        <!--header bottom satrt-->
+        <div class="header_bottom sticky-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-5">
+                        <!-- <div class="categories_menu">
+                            <div class="categories_title" style="width: 170px;">
+                                <h2 class="categori_toggle">Каталог</h2>
+                            </div>
+                            <div class="categories_menu_inner">
+                                <ul>
+                                    <li><a href="about.html">Batafsil</a></li>
+                                    <li><a href="cart.html">Savat</a></li>
+                                    <li><a href="checkout.html">To'lov</a></li>
+                                    <li><a href="login.html">Kirish</a></li>
+                                    <li><a href="contact.html">Aloqa</a></li>
+                                    <li><a href="shop.html">Katalog</a></li>
+                                </ul>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <!-- <div class="col-lg-2">
+                        <div class="contact_phone">
+                            <div class="contact_icone">
+                                <span class="pe-7s-headphones"></span>
+                            </div>
+                            <div class="contact_number">
+                                <p  style="color: #c51f30;">Call center</p>
+                                <span>1080</span>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!--header bottom end-->
+    </header>
+    <!-- header tugadi -->
+
+<!-- banner qismi boshlandi -->
+    <div style="display: flex;justify-content: space-between;
+    align-items: center;">
+        <div class="slider_area owl-carousel" style="width: 800px !important;">
+            <div class="single_slider slider_one" style="background: url(../static/assets/img2/o\'quv\ markaz.jpg);
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+        width: 800px;
+        height: 300px;
+        border-radius: 10px;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <div class="slider_content">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider slider_two" style="background: url(../static/assets/img2/labaratoriya.jpg);
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+        width: 800px;
+        height: 300px;
+        border-radius: 10px;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <div class="slider_content">
+                                <!-- <h1><strong>Nx80 Wireless </strong><br> Headphones </h1>
+                            <h3>get up to</h3>
+                            <h2>30% off</h2>
+                            <p>20.3 Megapixels plus 80 Megapixel</p>
+                            <a href="#">shop now</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider slider_two" style="background: url(../static/assets/img2/ayollar\ markazi.jpg);
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+        height: 300px;
+        width: 800px;
+        border-radius: 10px;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <div class="slider_content">
+                                <!-- <h1><strong>Nx80 Wireless </strong><br> Headphones </h1>
+                            <h3>get up to</h3>
+                            <h2>30% off</h2>
+                            <p>20.3 Megapixels plus 80 Megapixel</p>
+                            <a href="#">shop now</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider slider_two" style="background: url(../static/assets/img2/Akmal\ farm.jpg);
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+        height: 300px;
+        width: 800px;
+        border-radius: 10px;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <div class="slider_content">
+                                <!-- <h1><strong>Nx80 Wireless </strong><br> Headphones </h1>
+                            <h3>get up to</h3>
+                            <h2>30% off</h2>
+                            <p>20.3 Megapixels plus 80 Megapixel</p>
+                            <a href="#">shop now</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-right: 220px; flex-direction: column;">
+            <div>
+                <img src="../static/assets/img2/ayollar markazi.jpg" alt="" width="300" height="140" style="margin-bottom: 1rem;"><br>
+            </div>
+            <div>
+                <img src="../static/assets/img2/o'quv markaz.jpg" alt="" width="300" height="140">
+            </div>
+        </div>
+    </div><br><br>
+<!-- banner qismi tugatildi -->
+
+    <!-- 1-rinchi card -->
+    <div class="produtc_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="product_tab_button">
+                        <ul class="nav" role="tablist">
+                            <li>
+                                <h4> <a class="active" data-bs-toggle="tab" href="#Products" role="tab"
+                                        aria-controls="Products" aria-selected="true" style="color: black;">Хит
+                                        продаж</a></h4>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="Products" role="tabpanel">
+                    <div class="row">
+                        <div class="product_active owl-carousel">
+                            <div class="col-lg-3">
+                                <div class="single_product">
+                                    <div class="product_thumb">
+                                        <a href="product-details.html"><img src="../static/assets/img2/100.jpg" alt=""></a>
+                                        <div class="btn_quickview">
+                                            <!-- <a href="product-details.html" data-bs-toggle="modal" data-bs-target="#modal_box" -->
+                                                <!-- title="Quick View"><i class="ion-ios-eye"></i></a> -->
+                                        </div>
+                                    </div>
+                                    <div class="product_content">
+                                        <div class="product_ratting">
+                                            <ul>
+                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <h3><a href="product-details.html">трафлю</a></h3>
+                                        <div class="product_price">
+                                            <span class="current_price" style="color: grey;font-size: 15px;"><s>4 200
+                                                    so'm</s></span><br>
+                                            <span class="current_price">5 000 so'm</span>
+                                        </div>
+                                        <div class="product_action">
+                                            <ul>
+                                                <li class="product_cart"><a href="cart.html">корзина</a></li>
+                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i
+                                                            class="ion-ios-heart-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="single_product">
+                                    <div class="product_thumb">
+                                        <a href="product-details.html"><img src="../static/assets/img2/200.jpg" alt=""></a>
+                                        <div class="btn_quickview">
+                                            <!-- <a href="product-details.html" data-bs-toggle="modal" data-bs-target="#modal_box" -->
+                                                <!-- title="Quick View"><i class="ion-ios-eye"></i></a> -->
+                                        </div>
+                                    </div>
+                                    <div class="product_content">
+                                        <div class="product_ratting">
+                                            <ul>
+                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <h3><a href="product-details.html">нолгрип</a></h3>
+                                        <div class="product_price">
+                                            <span class="current_price" style="color: grey;font-size: 15px;"><s>4 200
+                                                    so'm</s></span><br>
+                                            <span class="current_price">10 000 so'm</span>
+                                        </div>
+                                        <div class="product_action">
+                                            <ul>
+                                                <li class="product_cart"><a href="cart.html">корзина</a></li>
+                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i class="ion-ios-heart-outline"></i></a></li>
+                                                <li class="add_links"><a href="#" title="Add to Compare"><i class="ion-loop"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="single_product">
+                                    <div class="product_thumb">
+                                        <a href="product-details.html"><img src="../static/assets/img2/300.jpg" alt=""></a>
+                                        <div class="btn_quickview">
+                                            <!-- <a href="product-details.html" data-bs-toggle="modal" data-bs-target="#modal_box" -->
+                                                <!-- title="Quick View"><i class="ion-ios-eye"></i></a> -->
+                                        </div>
+                                    </div>
+                                    <div class="product_content">
+                                        <div class="product_ratting">
+                                            <ul>
+                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <h3><a href="product-details.html">аспирин</a></h3>
+                                        <div class="product_price">
+                                            <span class="current_price" style="color: grey;font-size: 15px;"><s>4 200
+                                                    so'm</s></span><br>
+                                            <span class="current_price">15 000 so'm</span>
+                                        </div>
+                                        <div class="product_action">
+                                            <ul>
+                                                <li class="product_cart"><a href="cart.html">корзина</a></li>
+                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i
+                                                            class="ion-ios-heart-outline"></i></a></li>
+                                                <li class="add_links"><a href="#" title="Add to Compare"><i
+                                                            class="ion-loop"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="single_product">
+                                    <div class="product_thumb">
+                                        <a href="product-details.html"><img src="../static/assets/img2/400.jpg" alt=""></a>
+                                        <div class="btn_quickview">
+                                            <!-- <a href="product-details.html" data-bs-toggle="modal" data-bs-target="#modal_box" -->
+                                                <!-- title="Quick View"><i class="ion-ios-eye"></i></a> -->
+                                        </div>
+                                    </div>
+                                    <div class="product_content">
+                                        <div class="product_ratting">
+                                            <ul>
+                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <h3><a href="product-details.html">кюпен</a></h3>
+                                        <div class="product_price">
+                                            <span class="current_price" style="color: grey;font-size: 15px;"><s>4 200
+                                                    so'm</s></span><br>
+                                            <span class="current_price">16 200 so'm</span>
+                                        </div>
+                                        <div class="product_action">
+                                            <ul>
+                                                <li class="product_cart"><a href="cart.html">корзина</a></li>
+                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i
+                                                            class="ion-ios-heart-outline"></i></a></li>
+                                                <li class="add_links"><a href="#" title="Add to Compare"><i
+                                                            class="ion-loop"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 1-tugadi -->
+
+    <!-- 2-inchi card -->
+    <div class="produtc_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="product_tab_button">
+                        <ul class="nav" role="tablist">
+                            <li>
+                                <h4><a class="active" data-bs-toggle="tab" href="#Products" role="tab"
+                                        aria-controls="Products" aria-selected="true"
+                                        style="color: black;">Акции/Сезонные препараты</a></h4>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="Products" role="tabpanel">
+                    <div class="row">
+                        <div class="product_active owl-carousel">
+                            <div class="col-lg-3">
+                                <div class="single_product">
+                                    <div class="product_thumb">
+                                        <a href="product-details.html"><img src="../static/assets/img2/100.jpg" alt=""></a>
+                                        <div class="btn_quickview">
+                                            <!-- <a href="product-details.html" data-bs-toggle="modal" data-bs-target="#modal_box" -->
+                                                <!-- title="Quick View"><i class="ion-ios-eye"></i></a> -->
+                                        </div>
+                                    </div>
+                                    <div class="product_content">
+                                        <div class="product_ratting">
+                                            <ul>
+                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <h3><a href="product-details.html">трафлю</a></h3>
+                                        <div class="product_price">
+                                            <span class="current_price" style="color: grey;font-size: 15px;"><s>4 200
+                                                    so'm</s></span><br>
+                                            <span class="current_price">5 000 so'm</span>
+                                        </div>
+                                        <div class="product_action">
+                                            <ul>
+                                                <li class="product_cart"><a href="cart.html">корзина</a></li>
+                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i
+                                                            class="ion-ios-heart-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="single_product">
+                                    <div class="product_thumb">
+                                        <a href="product-details.html"><img src="../static/assets/img2/200.jpg" alt=""></a>
+                                        <div class="btn_quickview">
+                                            <!-- <a href="product-details.html" data-bs-toggle="modal" data-bs-target="#modal_box" -->
+                                                <!-- title="Quick View"><i class="ion-ios-eye"></i></a> -->
+                                        </div>
+                                    </div>
+                                    <div class="product_content">
+                                        <div class="product_ratting">
+                                            <ul>
+                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <h3><a href="product-details.html">нолгрип</a></h3>
+                                        <div class="product_price">
+                                            <span class="current_price" style="color: grey;font-size: 15px;"><s>4 200
+                                                    so'm</s></span><br>
+                                            <span class="current_price">10 000 so'm</span>
+                                        </div>
+                                        <div class="product_action">
+                                            <ul>
+                                                <li class="product_cart"><a href="cart.html">корзина</a></li>
+                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i
+                                                            class="ion-ios-heart-outline"></i></a></li>
+                                                <li class="add_links"><a href="#" title="Add to Compare"><i
+                                                            class="ion-loop"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="single_product">
+                                    <div class="product_thumb">
+                                        <a href="product-details.html"><img src="../static/assets/img2/300.jpg" alt=""></a>
+                                        <div class="btn_quickview">
+                                            <!-- <a href="product-details.html" data-bs-toggle="modal" data-bs-target="#modal_box" -->
+                                                <!-- title="Quick View"><i class="ion-ios-eye"></i></a> -->
+                                        </div>
+                                    </div>
+                                    <div class="product_content">
+                                        <div class="product_ratting">
+                                            <ul>
+                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <h3><a href="product-details.html">аспирин</a></h3>
+                                        <div class="product_price">
+                                            <span class="current_price" style="color: grey;font-size: 15px;"><s>4 200
+                                                    so'm</s></span><br>
+                                            <span class="current_price">15 000 so'm</span>
+                                        </div>
+                                        <div class="product_action">
+                                            <ul>
+                                                <li class="product_cart"><a href="cart.html">корзина</a></li>
+                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i
+                                                            class="ion-ios-heart-outline"></i></a></li>
+                                                <li class="add_links"><a href="#" title="Add to Compare"><i
+                                                            class="ion-loop"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="single_product">
+                                    <div class="product_thumb">
+                                        <a href="product-details.html"><img src="../static/assets/img2/400.jpg" alt=""></a>
+                                        <div class="btn_quickview">
+                                            <!-- <a href="product-details.html" data-bs-toggle="modal" data-bs-target="#modal_box" -->
+                                                <!-- title="Quick View"><i class="ion-ios-eye"></i></a> -->
+                                        </div>
+                                    </div>
+                                    <div class="product_content">
+                                        <div class="product_ratting">
+                                            <ul>
+                                                <li><a href="#"><i class="ion-star"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="ion-ios-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <h3><a href="product-details.html">кюпен</a></h3>
+                                        <div class="product_price">
+                                            <span class="current_price" style="color: grey;font-size: 15px;"><s>4 200
+                                                    so'm</s></span><br>
+                                            <span class="current_price">16 200 so'm</span>
+                                        </div>
+                                        <div class="product_action">
+                                            <ul>
+                                                <li class="product_cart"><a href="cart.html">корзина</a></li>
+                                                <li class="add_links"><a href="wishlist.html" title="Add to Wishlist"><i
+                                                            class="ion-ios-heart-outline"></i></a></li>
+                                                <li class="add_links"><a href="#" title="Add to Compare"><i
+                                                            class="ion-loop"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 2-tugadi -->
+
+    <!--bizning hamkorlar rasmi boshlandi -->
+    <div class="single_product_wrapper product_slider">
+        <div class="container">
+            <div class="row">
+                <h4 style="color: black;">Популярные бренды (маркетинг)</h4>
+                <div class="product_gallery_active owl-carousel" style="margin: 0px !important;">
+                    <div class="col-lg-3">
+                        <div class="single_product_gallery">
+                            <img src="../static/assets/img3/80.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="single_product_gallery">
+                            <img src="../static/assets/img3/cs.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="single_product_gallery">
+                            <img src="../static/assets/img3/nutrica.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="single_product_gallery">
+                            <img src="../static/assets/img3/omron.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="single_product_gallery">
+                            <img src="../static/assets/img3/pg.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3" style="width: 50px !important;">
+                        <div class="single_product_gallery">
+                            <img src="../static/assets/img3/logo02-removebg-preview.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="single_product_gallery">
+                            <img src="../static/assets/img3/stada.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bizning hamkorlar rasmi tugadi -->
+
+
+<!-- haqimizda bohshlandi -->
+    <div class="blog_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="blog_header_title">
+                        <h4 style="color: black;">Новости и статьи</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="blog_active owl-carousel">
+                    <div class="col-lg-4">
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="#"><img src="../static/assets/img3/yangiliklar 1.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content"><br>
+                                <h5>13-dekabr</h5>
+                                <a href="#">Lorem, ipsum.</a>
+                                <p>See how Patanjali became the Zara of grocery shopping!
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, numquam.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="#"><img src="../static/assets/img3/yangiliklar 2.jpg"></a>
+                            </div>
+                            <div class="blog_content"><br>
+                                <h5>13-dekabr</h5>
+                                <a href="#">Lorem, ipsum.</a>
+                                <p>Excuses we've all made to avoid eating 'green' vegetables.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, quam!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="#"><img src="../static/assets/img3/yangiliklar 3.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content"><br>
+                                <h5>13-dekabr</h5>
+                                <a href="#">Lorem, ipsum.</a>
+                                <p>7 types of cooking oils you should consider this World Health Day.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, modi.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="#"><img src="../static/assets/img3/yangiliklar 4.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content"><br>
+                                <h5>13-dekabr</h5>
+                                <a href="#">Lorem, ipsum.</a>
+                                <p>See how Patanjali became the Zara of grocery shopping!
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, debitis.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="#"><img src="../static/assets/img3/yangiliklar 5.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content"><br>
+                                <h5>13-dekabr</h5>
+                                <a href="#">Lorem, ipsum.</a>
+                                <p>See how Patanjali became the Zara of grocery shopping!
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, debitis.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+<!-- haqimizda tugatildi -->
+<!-- matinlar boshlandi -->
+    <div class="matin">
+        <h4 class="a2">Онлайин аптека AkmalFarimMedical</h4>
+        <p>Онлайн-аптека (Преимущества, Цель, Миссия, Ценности)
+
+            Преимущества:
+            Онлайн-аптека обеспечивает удобство <br> и оперативность для современных <br> клиентов. Основные
+            преимущества:
+            <br>
+            ✅ Удобство: Возможность заказывать лекарства, не выходя из дома.
+            <br>
+            ✅ Быстрая доставка: Заказы доставляются быстро и надежно.
+            <br>
+            ✅ Широкий ассортимент: Различные лекарства и товары для здоровья в одном месте.
+            <br>
+            ✅ Прозрачность цен: Легко сравнивать цены и выбирать лучшие предложения.
+            <br>
+            ✅ Профессиональная консультация: Онлайн-консультации помогают правильно выбрать лекарства.
+            <br>
+            Цель:
+            Основная цель онлайн-аптеки – обеспечить доступность товаров для здоровья по выгодным ценам <br> для каждого
+            человека. Мы стремимся помогать людям заботиться о своем здоровье и повышать качество их жизни.
+            <br>
+            Миссия:
+            Наша миссия – сделать услуги в сфере здравоохранения более удобными и доступными с помощью <br> современных
+            технологий. Мы стремимся предоставить каждому клиенту качественные товары, быструю доставку и надежные
+            консультации.
+
+            Ценности: <br>
+            ✔ Ответственность перед клиентами: Мы ставим здоровье и безопасность наших клиентов на первое место.
+            <br>
+            ✔ Инновации: Постоянно совершенствуем наши услуги и внедряем новые технологии.
+            <br>
+            ✔ Социальная ответственность: Мы стремимся внести вклад в улучшение здоровья общества.
+        </p>
+    </div><br><br><br>
+    <style>
+        .matin {
+            justify-content: center;
+            align-items: center;
+            margin-left: 250px;
+        }
+
+        .a2 {
+            color: black;
+        }
+    </style>
+<!-- matinlar tugatildi -->
+
+<!-- reklama- boshland -->
+
+    <div class="container22">
+        <div class="box1">
+            <h2 style="color: black;">ГАРАНТИЯ КАЧЕСТВА</h2>
+            <button>подоброобнее</button>
+            <img src="../static/assets/img2/00002.jpg" alt="Image 1">
+        </div>
+        <div class="box1">
+            <h2 style="color: black;">УСЛОВИЯ ДОСТАВКИ</h2>
+            <button>подоброобнее</button>
+            <img src="../static/assets/img2/00001.jpg" alt="Image 2">
+        </div>
+    </div>
+    <style>
+        .box1>h2 {
+            position: absolute;
+            color: white;
+            padding-left: 20px;
+            padding-top: 10px;
+            font-size: 2rem;
+        }
+
+        .box1 {
+            width: 550px;
+        }
+
+        .box1>p {
+            position: absolute;
+            color: white;
+            padding-left: 20px;
+            padding-top: 70px;
+            font-size: 17px;
+        }
+
+        .box1>button {
+            margin-top: 120px;
+            margin-left: 20px;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 30px;
+            background-color: #15315a;
+            color: white;
+            position: absolute;
+        }
+
+        .container22 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+
+        .box1 img {
+            width: 1000px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Telefon uchun */
+        @media (max-width: 767px) {
+            .box1>h2 {
+                font-size: 1.5rem;
+                padding-left: 10px;
+                padding-top: 5px;
+            }
+
+            .box1>p {
+                font-size: 14px;
+                padding-left: 10px;
+                padding-top: 50px;
+            }
+
+            .box1>button {
+                margin-top: 120px;
+                margin-left: 10px;
+                padding: 5px 20px;
+                font-size: 14px;
+            }
+
+            .container22 {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .box1 img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* iPad uchun */
+        @media (max-width: 1024px) {
+            .box1>h2 {
+                font-size: 1.8rem;
+                padding-left: 15px;
+                padding-top: 8px;
+            }
+
+            .box1>p {
+                font-size: 15px;
+                padding-left: 15px;
+                padding-top: 60px;
+            }
+
+            .box1>button {
+                margin-top: 130px;
+                margin-left: 15px;
+                padding: 5px 25px;
+                font-size: 16px;
+            }
+
+            .container22 {
+                flex-direction: row;
+                align-items: center;
+                gap: 40px;
+            }
+
+            .box1 img {
+                width: 80%;
+                height: auto;
+            }
+        }
+    </style>
+<!-- reklama tugatilid -->
+
+   <!-- footer start berdik -->
+   <div class="shipping_area shipping_contact" style="background-color: #15315a;">
+    <div class="container">
+        <div class="shipping_contact">
+            <div class="row">
+                <div class="footer_area">
+                    <div class="container">
+                        <div class="footer_top">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-8">
+                                    <div class="single_footer">
+                                        <div class="footer_logo">
+                                            <img src="../static/assets/img2/AFM MEDICAL oq.png" alt="" width="220">
+                                        </div>
+                                        <div class="footer_contact">
+                                            <ul>
+                                                <li style="color: white;"><i class="ion-location"
+                                                        style="color: white;"></i>
+                                                    Andijon shahar istiqlol ko'chasi 27 uy</li>
+                                                <li style="color: white;"><i class="ion-ios-telephone"
+                                                        style="color: white;"></i> 33 991 99 91</li>
+                                                <li style="color: white;"><i class="ion-ios-email"
+                                                        style="color: white;"></i> <a href="#"
+                                                        style="color: white;">Manzil@akmalfarm.com</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                    <div class="single_footer">
+                                        <h3 style="color: white;">Покупателю</h3>
+                                        <ul>
+                                            <a href="#" style="color: white;font-size: 12px;">Как заказать
+                                                лекарства?</a>
+                                            <a href="#" style="color: white;font-size: 12px;">Доставка и оплата</a>
+                                            <a href="#" style="color: white;font-size: 12px;">Популярные вопросы</a>
+                                            <a href="#" style="color: white;font-size: 12px;">Справочники</a>
+                                            <a href="#" style="color: white;font-size: 12px;">Пользовательское
+                                                соглашение</a>
+                                            <a href="#" style="color: white;font-size: 12px;">Условия возврата
+                                                товара</a>
+                                            <a href="#" style="color: white;font-size: 12px;">Новости и статьи</a>
+                                            <a href="#" style="color: white;font-size: 12px;">Программа
+                                                лояльности</a>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                    <div class="single_footer">
+                                        <h3 style="color: white;">Компания</h3>
+                                        <ul>
+                                            <a href="#" style="color: white; font-size: 0.8rem;">О компании</a>
+                                            <a href="#" style="color: white;font-size: 0.8rem;">Наши аптеки</a>
+                                            <a href="#" style="color: white;font-size: 0.8rem;">Сертификаты</a>
+                                            <a href="#" style="color: white;font-size: 0.8rem;">Контакты</a>
+                                        </ul> <br>
+                                        <h3 style="color: white;">Akmal Farm Medical</h3>
+                                        <ul>
+                                            <a href="#" style="color: white; font-size: 11px;">Следите за
+                                                обновлениями</a>
+                                            <a href="#" style="color: white; font-size: 11px;">Akmal Farm Medical в
+                                                социальных сетях</a>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-8">
+                                    <div class="single_footer">
+                                        <div class="location-container">
+                                            <div class="map-wrapper">
+                                                <iframe
+                                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434508616!2d144.95373531531676!3d-37.81627917975151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577a63485a1189d!2sFederation%20Square!5e0!3m2!1sen!2s!4v1619560513329!5m2!1sen!2s"
+                                                    width="1900" height="300" style="border:0;" allowfullscreen=""
+                                                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                        <style>
+                                            .location-container {
+                                                width: 500px;
+                                                margin: 0px auto;
+                                                padding: 20px;
+                                                border-radius: 10px;
+                                                text-align: center;
+                                            }
+
+                                            .location-container h1 {
+                                                font-size: 2rem;
+                                                margin-bottom: 10px;
+                                                color: #333;
+                                            }
+
+                                            .location-container p {
+                                                font-size: 1rem;
+                                                margin-bottom: 20px;
+                                                color: #555;
+                                            }
+
+                                            .map-wrapper {
+                                                overflow: hidden;
+                                                border-radius: 10px;
+                                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                                            }
+
+                                            .map-wrapper iframe {
+                                                width: 800px;
+                                                height: 300px;
+                                                border: none;
+                                                border-radius: 10px;
+                                            }
+
+                                            /* Responsive Styles */
+
+                                            /* For tablets and smaller devices */
+                                            @media (max-width: 768px) {
+                                                .location-container {
+                                                    width: 90%;
+                                                    /* Reduce the width to fit better on tablets */
+                                                    padding: 15px;
+                                                    /* Adjust padding for smaller screens */
+                                                }
+
+                                                .location-container h1 {
+                                                    font-size: 1.75rem;
+                                                    /* Slightly smaller heading */
+                                                }
+
+                                                .location-container p {
+                                                    font-size: 0.95rem;
+                                                    /* Smaller paragraph font */
+                                                }
+
+                                                .map-wrapper iframe {
+                                                    width: 100%;
+                                                    /* Make the iframe responsive */
+                                                    height: 250px;
+                                                    /* Adjust iframe height for tablets */
+                                                }
+                                            }
+
+                                            /* For mobile devices */
+                                            @media (max-width: 480px) {
+                                                .location-container {
+                                                    width: 100%;
+                                                    /* Full width on mobile devices */
+                                                    padding: 10px;
+                                                    /* Smaller padding on mobile */
+                                                }
+
+                                                .location-container h1 {
+                                                    font-size: 1.5rem;
+                                                    /* Even smaller heading for mobile */
+                                                }
+
+                                                .location-container p {
+                                                    font-size: 0.85rem;
+                                                    /* Smaller paragraph font */
+                                                }
+
+                                                .map-wrapper iframe {
+                                                    width: 100%;
+                                                    /* Full width iframe */
+                                                    height: 200px;
+                                                    /* Smaller iframe height for mobile */
+                                                }
+                                            }
+                                        </style>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer qismini tugatdik -->
+
+
+
+    <script src="../static/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="../static/assets/js/popper.js"></script>
+    <script src="../static/assets/js/bootstrap.min.js"></script>
+    <script src="../static/assets/js/plugins.js"></script>
+    <script src="../static/assets/js/main.js"></script>
+</body>
+
+</html>

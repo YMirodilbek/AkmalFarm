@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="assets/img2/AFM%20MEDICAL%20—%20копия.png">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bundle.css">
+    <link rel="stylesheet" href="assets/css/plugins.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css2/tasdiqlash.css">
+</head>
+
+<body>
+
+        <div class="hammasi">
+            <div class="container">
+                <h1>Telefon raqamingizni Kiriting:</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+
+                    <button type="submit">Kodni yuborish</button>
+                </form>
+            </div>
+        </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login & Registration Form</title>
+  <!---Custom CSS File--->
+  <link rel="stylesheet" href="{%  static 'style.css' %}">
+</head>
+<style>
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+</style>
+<body>
+  <div class="container">
+    <input type="checkbox" id="check">
+    <div class="login form">
+      <header>Login</header>
+      <form method="post">
+          {% csrf_token %}
+          <p>{{ form.phone_number.label }}</p>
+          {{form.phone_number}}
+          <label>
+        <input type="checkbox" name="is_agreed" style="height: 20px; width: 20px; margin-top: 5px;" required>
+            <a href="{{ pdf.file.url }}">{{ pdf.title}}</a>
+        </label>
+        
+        <input type="submit" class="button" id="submitButton" value="Kodni Yuborish">
+          <h4 style="list-style-type: none;" >{{form.errors }}</h4>
+      </form>
+    </div>
+
+  </div>
+</body>
+</html>
