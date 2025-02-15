@@ -1,7 +1,98 @@
 {%  extends 'base.html'%}
 {% load static %}
 {% block content %}
-            
+    <style>
+    .checkout-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.checkout-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #15315a;
+}
+
+.checkout-form label {
+    font-weight: bold;
+    color: #15315a;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.checkout-form input,
+.checkout-form textarea,
+.checkout-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.checkout-form input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.payment-options {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.payment-options label {
+    display: flex;
+    align-items: center;
+}
+
+.checkout-form textarea {
+    height: 80px;
+    resize: none;
+}
+
+.checkout-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #15315a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.checkout-form button:hover {
+    background-color: #122a4c;
+}
+
+/* Google Map uchun stil */
+#map {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Responsiv dizayn */
+@media (max-width: 768px) {
+    .checkout-container {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-options {
+        flex-direction: column;
+    }
+}
+
+    </style>
              <!--breadcrumbs area start-->
             <div class="breadcrumbs_area commun_bread">
                 <div class="container">   
@@ -20,278 +111,61 @@
                 </div>         
             </div>
             <!--breadcrumbs area end-->
-      
+      <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>{{ form.full_name.label }}</label>
+        {{ form.full_name }}
+    </div>
+
+    <div class="form-group">
+        <label>{{ form.phone_number.label }}</label>
+        {{ form.phone_number }}
+    </div>
+
+    <div class="form-group">
+        <label>{{ form.payment_method.label }}</label>
+        {{ form.payment_method }}
+    </div>
+
+    <div class="form-group">
+        <label>Yetkazib berish manzili</label>
+        <input type="text" id="address" class="form-control" readonly>
+        {{ form.address }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Buyurtmani yakunlash</button>
+</form>
+
+<!-- Google Maps JS -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places"></script>
+<script>
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 41.2995, lng: 69.2401}, // O'zbekiston markazi
+            zoom: 12
+        });
+
+        var input = document.getElementById('address');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+        autocomplete.addListener('place_changed', function () {
+            var place = autocomplete.getPlace();
+            if (!place.geometry) {
+                return;
+            }
+
+            document.getElementById("id_address").value = place.formatted_address;
+        });
+    }
+
+    google.maps.event.addDomListener(window, 'load', initMap);
+</script>
+
+<div id="map" style="height: 300px; width: 100%; margin-top: 10px;"></div>
+
              <!--Checkout page section-->
-            <div class="Checkout_section">
-               <div class="container">
-                    <div class="row">
-                       <div class="col-12">
-                            <div class="user-actions mb-20">
-                                <h3> 
-                                    <i class="fa fa-file-o" aria-hidden="true"></i>
-                                    Qaytgan mijozmisiz?
-                                    <a class="Returning" href="#" data-bs-toggle="collapse" data-bs-target="#checkout_login" aria-expanded="true">Kirish uchun bu yerni bosing</a>     
 
-                                </h3>
-                                 <div id="checkout_login" class="collapse" data-bs-parent="#accordion">
-                                    <div class="checkout_info">
-                                        <p>Agar avval biz bilan xarid qilgan bo'lsangiz, iltimos, quyidagi maydonlarga ma'lumotlaringizni kiriting. Agar siz yangi mijoz bo'lsangiz, iltimos, Hisob-faktura va Yetkazib berish bo'limiga o'ting.</p>  
-                                        <form action="#">  
-                                            <div class="form_group mb-20">
-                                                <label>Ism yoki Email <span>*</span></label>
-                                                <input type="text">     
-                                            </div>
-                                            <div class="form_group mb-25">
-                                                <label>Parol  <span>*</span></label>
-                                                <input type="text">     
-                                            </div> 
-                                            <div class="form_group group_3 ">
-                                                <button type="submit">Kirish</button>
-                                                <label for="remember_box">
-                                                    <input id="remember_box" type="checkbox">
-                                                    <span> Eslab qol </span>
-                                                </label>     
-                                            </div>
-                                            <a href="#">Parolingizni unutdingizmi?</a>
-                                        </form>          
-                                    </div>
-                                </div>    
-                            </div>
-                            <div class="user-actions mb-20">
-                                <h3> 
-                                    <i class="fa fa-file-o" aria-hidden="true"></i>
-                                    Qaytgan mijozmisiz?
-                                    <a class="Returning" href="#" data-bs-toggle="collapse" data-bs-target="#checkout_coupon" aria-expanded="true">Kodingizni kiritish uchun bu yerni bosing</a>     
-
-                                </h3>
-                                 <div id="checkout_coupon" class="collapse" data-bs-parent="#accordion">
-                                    <div class="checkout_info">
-                                        <form action="#">
-                                            <input placeholder="Kuppon kodini yozing" type="text">
-                                            <button type="submit">Kuponni</button>
-                                        </form>
-                                    </div>
-                                </div>    
-                            </div>    
-                       </div>
-                    </div>
-                    <div class="checkout_form">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <form action="#">
-                                    <h3>Hisob Tafsilotlari</h3>
-                                    <div class="row">
-
-                                        <div class="col-lg-6 mb-20">
-                                            <label>Ism <span>*</span></label>
-                                            <input type="text">    
-                                        </div>
-                                        <div class="col-lg-6 mb-20">
-                                            <label>Familya  <span>*</span></label>
-                                            <input type="text"> 
-                                        </div>
-                                        <div class="col-12 mb-20">
-                                            <label>Kompaniya Nomi</label>
-                                            <input type="text">     
-                                        </div>
-                                        <div class="col-12 mb-20">
-                                            <label for="country">Mamlakat <span>*</span></label>
-                                            <select name="cuntry" id="country"> 
-                                                <option value="2">Uzbekiston</option>
-                                                <option value="3">Andijon</option> 
-                                                <option value="4">Toshkent</option> 
-                                                <option value="5">Namangan</option>    
-                                                <option value="6">Farg'oan</option>    
-                                                <option value="7">Qozog'iston</option>    
-                                                <option value="8">Qirg'iziston</option>    
-
-                                            </select>
-                                        </div>
-
-                                        <div class="col-12 mb-20">
-                                            <label>Ko'cha manzili   <span>*</span></label>
-                                            <input placeholder="Uy raqami va ko'cha nomi" type="text">     
-                                        </div>
-                                        <div class="col-12 mb-20">
-                                            <input placeholder="Kvartira suite blok" type="text">     
-                                        </div>
-                                        <div class="col-12 mb-20">
-                                            <label>Shahar / Shahar nomi <span>*</span></label>
-                                            <input  type="text">    
-                                        </div> 
-                                         <div class="col-12 mb-20">
-                                            <label>Viloyat / Tuman <span>*</span></label>
-                                            <input type="text">    
-                                        </div> 
-                                        <div class="col-lg-6 mb-20">
-                                            <label>Telefon<span>*</span></label>
-                                            <input type="text"> 
-
-                                        </div> 
-                                         <div class="col-lg-6 mb-20">
-                                            <label>Email Manzili   <span>*</span></label>
-                                              <input type="text"> 
-
-                                        </div> 
-                                        <div class="col-12 mb-20">
-                                            <input id="account" type="checkbox" data-bs-target="createp_account" />
-                                            <label for="account" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-controls="collapseOne">Hisob yaratmoqchimisiz?</label>
-
-                                            <div id="collapseOne" class="collapse one" data-bs-parent="#accordion">
-                                                <div class="card-body1">
-                                                   <label> Hisob paroli   <span>*</span></label>
-                                                    <input placeholder="password" type="password">  
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 mb-20">
-                                            <input id="address" type="checkbox" data-bs-target="createp_account" />
-                                            <label class="righ_0" for="address" data-bs-toggle="collapse" data-bs-target="#collapsetwo" aria-controls="collapseOne">Boshqa manzilga yuborilsinmi?</label>
-
-                                            <div id="collapsetwo" class="collapse one" data-bs-parent="#accordion">
-                                               <div class="row">
-                                                    <div class="col-lg-6 mb-20">
-                                                        <label>Ism <span>*</span></label>
-                                                        <input type="text">    
-                                                    </div>
-                                                    <div class="col-lg-6 mb-20">
-                                                        <label>Familya  <span>*</span></label>
-                                                        <input type="text"> 
-                                                    </div>
-                                                    <div class="col-12 mb-20">
-                                                        <label>Companiya Nomi</label>
-                                                        <input type="text">     
-                                                    </div>
-                                                    <div class="col-12 mb-20">
-                                                        <div class="select_form_select">
-                                                            <label for="countru_name">Uzbekiston <span>*</span></label>
-                                                            <select name="cuntry" id="countru_name"> 
-                                                                <option value="2">Uzbekiston</option>
-                                                                <option value="3">Andijon</option> 
-                                                                <option value="4">Toshkent</option> 
-                                                                <option value="5">Namangan</option>    
-                                                                <option value="6">Farg'oan</option>    
-                                                                <option value="7">Qozog'iston</option>    
-                                                                <option value="8">Qirg'iziston</option>     
-                                                            </select>
-                                                        </div> 
-                                                    </div>
-
-                                                    <div class="col-12 mb-20">
-                                                        <label>Ko'cha manzili  <span>*</span></label>
-                                                        <input placeholder="House number and street name" type="text">     
-                                                    </div>
-                                                    <div class="col-12 mb-20">
-                                                        <input placeholder="Apartment, suite, unit etc. (optional)" type="text">     
-                                                    </div>
-                                                    <div class="col-12 mb-20">
-                                                        <label>Shahar / Shahar nomi<span>*</span></label>
-                                                        <input  type="text">    
-                                                    </div> 
-                                                     <div class="col-12 mb-20">
-                                                        <label>Viloyat / Tuman <span>*</span></label>
-                                                        <input type="text">    
-                                                    </div> 
-                                                    <div class="col-lg-6 mb-20">
-                                                        <label>Telefon<span>*</span></label>
-                                                        <input type="text"> 
-
-                                                    </div> 
-                                                     <div class="col-lg-6">
-                                                        <label> Email Manzili   <span>*</span></label>
-                                                          <input type="text"> 
-
-                                                    </div> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="order-notes">
-                                                 <label for="order_note">Buyurtma izohlari</label>
-                                                <textarea id="order_note" placeholder="Buyurtmangiz haqida izohlar, masalan, yetkazib berish uchun maxsus izohlar."></textarea>
-                                            </div>    
-                                        </div>     	    	    	    	    	    	    
-                                    </div>
-                                </form>    
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <form action="#">    
-                                    <h3>Sizning buyurtmangiz</h3> 
-                                    <div class="order_table table-responsive mb-30">
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <th>Mahsulot</th>
-                                                    <th>Jami</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Kupen tabletka <strong> × 2</strong></td>
-                                                    <td> $165.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>  Kupen mazi	 <strong> × 2</strong></td>
-                                                    <td> $50.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td> Kupen suvi	<strong> × 2</strong></td>
-                                                    <td> $50.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td> Turmol	 <strong> × 1</strong></td>
-                                                    <td> $50.00</td>
-                                                </tr>
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>Savatning umumiy summasi</th>
-                                                    <td>$215.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Yetkazib berish</th>
-                                                    <td><strong>$5.00</strong></td>
-                                                </tr>
-                                                <tr class="order_total">
-                                                    <th>Jami Buyurtma</th>
-                                                    <td><strong>$220.00</strong></td>
-                                                </tr>
-                                            </tfoot>
-                                        </table>     
-                                    </div>
-                                    <div class="payment_method">
-                                       <div class="panel-default">
-                                            <input id="payment" name="check_method" type="radio" data-bs-target="createp_account" />
-                                            <label for="payment" data-bs-toggle="collapse" data-bs-target="#method" aria-controls="method">Hisob yaratmoqchimisiz?</label>
-
-                                            <div id="method" class="collapse one" data-bs-parent="#accordion">
-                                                <div class="card-body1">
-                                                   <p>Iltimos, tekshiruvni quyidagi manzilga yuboring: Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                       <div class="panel-default">
-                                            <input id="payment_defult" name="check_method" type="radio" data-bs-target="createp_account" />
-                                            <label for="payment_defult" data-bs-toggle="collapse" data-bs-target="#collapsedefult" aria-controls="collapsedefult">PayPal <img src="../static/assets/img/visha/papyel.png" alt=""></label>
-
-                                            <div id="collapsedefult" class="collapse one" data-bs-parent="#accordion">
-                                                <div class="card-body1">
-                                                   <p>
-                                                    Naq pul  orqali to'lov qiling; agar sizda naq pull bo'lmasa hisobingiz bo'lmasa, kredit kartangiz bilan to'lov qilishingiz mumkin.</p> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="order_button">
-                                            <button  type="submit">Kartaga o'tish</button> 
-                                        </div>    
-                                    </div> 
-                                </form>         
-                            </div>
-                        </div> 
-                    </div> 
-                </div>       
-            </div>
-            <!--Checkout page section end-->
             
 <br><br><br><br><br><br>            
  {% endblock content %}

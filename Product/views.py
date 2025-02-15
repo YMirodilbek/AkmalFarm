@@ -1,10 +1,12 @@
-from unicodedata import category
+from django.contrib import messages
+
 
 from django.shortcuts import render
 from django.views.generic import DetailView
-
+from .forms import  *
 from .models import *
 # Create your views here.
+
 
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
@@ -22,8 +24,9 @@ def add_to_cart(request, product_id):
     if not created:
         order_item.quantity += 1  # Agar bor bo‘lsa, miqdorini oshiramiz
         order_item.save()
+    messages.success(request, " mahsulot Savatchaga qo'shildi ")
 
-    return redirect("cart")  # Savat sahifasiga qaytarish
+    return redirect(request.META.get("HTTP_REFERER", "home"))  # Savat sahifasiga qaytarish
 @login_required(login_url='/auth/send-otp/')
 def cart_view(request):
     order = Order.objects.filter(user=request.user, is_completed=False).first()  # Faqat o‘z savatini oladi
@@ -105,3 +108,24 @@ class ProductDetailView(DetailView):
     model = Product
     template_name = 'product-details.html'
     context_object_name = 'product'
+
+def checkout_view(request):
+    if request.method == "POST":
+        form = CheckoutForm(request.POST)
+        if form.is_valid():
+            # Ma'lumotlarni qayta ishlash
+            full_name = form.cleaned_data['full_name']
+            phone_number = form.cleaned_data['phone_number']
+            payment_method = form.cleaned_data['payment_method']
+            address = form.cleaned_data['address']
+
+            # Bu yerda buyurtmani saqlash logikasi qo‘shilishi mumkin
+
+            return redirect('order_success')  # Buyurtma muvaffaqiyatli sahifasiga yo‘naltirish
+    else:
+        form = CheckoutForm()
+
+    return render(request, 'checkout.html', {'form': form})
+
+
+

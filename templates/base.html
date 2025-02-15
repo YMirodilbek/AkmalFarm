@@ -67,6 +67,7 @@
                             </div>
 
                         </div>
+
                         <div class="search_bar">
                             <form action="/search/" method = "GET">
                                 <input placeholder="Поиск: " type="text" name="q" value="{{query}}">
@@ -117,6 +118,21 @@
 
 
                                 <style>
+                                    .messages {
+                                        position: fixed;
+                                        top: 20px;
+                                        right: 20px;
+                                        background: #4CAF50;
+                                        color: white;
+                                        padding: 15px;
+                                        border-radius: 5px;
+                                        z-index: 1000;
+                                    }
+
+                                    .message {
+                                        font-size: 16px;
+                                        font-weight: bold;
+                                    }
                                     /* Modal Styles */
                                     .modal,
                                     .modal2 {
@@ -324,41 +340,36 @@
                             <div class="cart_link" style="margin-top: 10px;">
                                 <a href="javascript:void(0)" style="color: black !important; font-weight: 400; "><i
                                         class="ion-ios-cart"></i>Корзина</a>
-                                <span class="cart_count">2</span>
+                                <span class="cart_count">{{ cart_items|length }}</span>
                                 <!--mini cart-->
                                 <div class="mini_cart">
                                     <div class="items_nunber">
-                                        <span>2 Items in Cart</span>
+                                        <span>{{ cart_items|length }} Items in Cart</span>
                                     </div>
-                                    <div class="cart_button checkout">
-                                        <a href="checkout.html">Proceed to Checkout</a>
-                                    </div>
+                                    {% for items in cart_items %}
                                     <div class="cart_item">
                                         <div class="cart_img">
-                                            <a href="#"><img src="../static/assets/img/cart/cart1.jpg" alt=""></a>
+                                            <a href="#"><img src="{{items.product.image1.url}}" alt=""></a>
                                         </div>
                                         <div class="cart_info">
-                                            <a href="#">Mr.Coffee 12-Cup</a>
+                                            <a href="#">{{ items.product.name}}</a>
+                                            <p>soni: {{ items.quantity }} dona</p>
+                                            <p>narxi: {{ items.product.price }} So'm</p>
+                                            <p><strong>Umumiy: ${{ items.total_price }} So'm</strong></p>
                                             <form action="#">
                                                 <input min="0" max="100" type="number">
-                                                <span>$60.00</span>
+                                                {% if items.product.new_price > 0 %}
+                                                <span>{{items.product.new_price}}</span>
+                                                {% else %}
+                                                <span>{{items.product.price}}</span>
+                                                {% endif %}
                                             </form>
                                         </div>
                                     </div>
-                                    <div class="cart_item">
-                                        <div class="cart_img">
-                                            <a href="#"><img src="../static/assets/img/cart/cart2.jpg" alt=""></a>
-                                        </div>
-                                        <div class="cart_info">
-                                            <a href="#">Lid Cover Cookware</a>
-                                            <form action="#">
-                                                <input min="0" max="100" type="number">
-                                                <span>$160.00</span>
-                                            </form>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
+                                    <p><strong>Umumiy Narx: {{ cart_total }} So'm</strong></p>
                                     <div class="cart_button view_cart">
-                                        <a href="#">View and Edit Cart</a>
+                                        <a href="/cart/">View and Edit Cart</a>
                                     </div>
                                 </div>
                                 <!--mini cart end-->
@@ -368,6 +379,7 @@
                 </div>
             </div>
         </div>
+
         <!--header middel end-->
 
         <!--header bottom satrt-->
