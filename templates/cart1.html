@@ -1,0 +1,110 @@
+{%  extends 'base.html'%}
+{% load static %}
+{% block content %}
+            <!--header area end-->
+            
+             <!--shopping cart area start -->
+            <div class="shopping_cart_area">
+                <div class="container">  
+                    <form action="#"> 
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table_desc">
+                                    <div class="cart_page table-responsive">
+                                        <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="product_remove">O'chrish</th>
+                                            <th class="product_thumb">Rasm</th>
+                                            <th class="product_name">Mahsulot</th>
+                                            <th class="product-price">Narx</th>
+                                            <th class="product_quantity">Miqdor</th>
+                                            <th class="product_total">Jami</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                           <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                            <td class="product_thumb"><a href="#"><img src="../static/assets/img/cart/cart6.jpg" alt=""></a></td>
+                                            <td class="product_name"><a href="#">Maxsulot nomi</a></td>
+                                            <td class="product-price">65 000</td>
+                                            <td class="product_quantity"><input min="1" max="100" value="1" type="number"></td>
+                                            <td class="product_total">130 00</td>
+
+
+                                        </tr>
+                                        <tr>
+                                            <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                             <td class="product_thumb"><a href="#"><img src="../static/assets/img/cart/cart6.jpg" alt=""></a></td>
+                                             <td class="product_name"><a href="#">Maxsulot nomi</a></td>
+                                             <td class="product-price">65 000</td>
+                                             <td class="product_quantity"><input min="1" max="100" value="1" type="number"></td>
+                                             <td class="product_total">130 00</td>
+ 
+ 
+                                         </tr>
+                                         <tr>
+                                            <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                             <td class="product_thumb"><a href="#"><img src="../static/assets/img/cart/cart6.jpg" alt=""></a></td>
+                                             <td class="product_name"><a href="#">Maxsulot nomi</a></td>
+                                             <td class="product-price">65 000</td>
+                                             <td class="product_quantity"><input min="1" max="100" value="1" type="number"></td>
+                                             <td class="product_total">130 00</td>
+ 
+ 
+                                         </tr>
+                                       
+
+                                    </tbody>
+                                </table>   
+                                    </div>  
+                                    <div class="cart_submit">
+                                        <button type="submit">update cart</button>
+                                    </div>      
+                                </div>
+                             </div>
+                         </div>
+
+                        <div class="coupon_area">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="coupon_code left">
+                                        <h3>Kupon</h3>
+                                        <div class="coupon_inner">   
+                                            <p>Agar sizda kupon kodi bo‘lsa, uni kiriting.</p>                                
+                                            <input placeholder="kupon kodini kiriting: " type="text">
+                                            <button type="submit">Kuponni qo‘llash</button>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="coupon_code right">
+                                        <h3>Savatcha jami</h3>
+                                        <div class="coupon_inner">
+                                           <div class="cart_subtotal">
+                                               <p>Oraliq summa</p>
+                                               <p class="cart_amount">20 000</p>
+                                           </div>
+                                           <div class="cart_subtotal ">
+                                               <p>Yetkazib berish</p>
+                                               <p class="cart_amount"><span>Tegishli tarif:</span>25 000</p>
+                                           </div>
+                                           <a href="#">Yetkazib berishni hisoblash</a>
+
+                                           <div class="cart_subtotal">
+                                               <p>Jami summa</p>
+                                               <p class="cart_amount">27 000</p>
+                                           </div>
+                                           <div class="checkout_btn">
+                                               <a href="#">To‘lovni yakunlash</a>
+                                           </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form> 
+                </div>     
+            </div>
+            
+     {% endblock content %}

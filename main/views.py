@@ -1,11 +1,19 @@
 import random
+
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.core.cache import cache
+from django.template.context_processors import request
+from django.views.decorators.http import require_safe
+
 from .models import CustomUser,PDFDocument
 from .forms import PhoneNumberForm, OTPForm, UserDetailsForm
+from django.contrib.auth import login,logout,authenticate
 
 from django.shortcuts import render
 from .models import PDFDocument
+
+
 
 def send_otp(request):
     if request.method == "POST":
@@ -35,9 +43,10 @@ def send_otp(request):
 
 
 
+
 def verify_otp(request):
-    phone_number = request.session.get('phone_number')  # ✅ Sessiyadan olamiz
-    is_agreed = request.session.get('is_agreed', False)  # ✅ Default False
+    phone_number = request.session.get('phone_number')
+    is_agreed = request.session.get('is_agreed', False)
 
     if not phone_number:
         return redirect('send_otp')
@@ -49,20 +58,22 @@ def verify_otp(request):
             stored_otp = cache.get(phone_number)
 
             if stored_otp and str(stored_otp) == otp:
-                # ✅ Foydalanuvchi mavjud yoki yaratiladi
+                # ✅ Foydalanuvchini yaratish yoki olish
                 user, created = CustomUser.objects.get_or_create(
                     phone_number=phone_number,
                     defaults={'is_agree': is_agreed}
                 )
 
-                if not created:  # ✅ Foydalanuvchi oldin mavjud bo‘lsa
-                    return redirect('success')
+                # ✅ Agar oldin yaratilgan bo‘lsa, `is_agree` yangilaymiz
+                if not created:
+                    user.is_agree = True
+                    user.save()
 
-                # ✅ `is_agree` yangilanayotganini tekshiramiz
-                user.is_agree = True
-                user.save()
+                request.session['user_id'] = user.id  # Sessiyaga saqlash
 
-                request.session['user_id'] = user.id
+                # ✅ **Foydalanuvchini avtomatik login qilish**
+                login(request, user)  # 🔥 MUHIM!
+
                 return redirect('complete_registration')
 
             else:
@@ -73,24 +84,29 @@ def verify_otp(request):
 
     return render(request, 'auth/verify.html', {'form': form, 'phone_number': phone_number})
 
-def complete_registration(request):
-    user_id = request.session.get('user_id')
-    if not user_id:
-        return redirect('send_otp')
 
-    user = CustomUser.objects.get(id=user_id)
+@login_required
+def complete_registration(request):
+    user = request.user  # ✅ Tizimga kirgan foydalanuvchini olamiz
 
     if request.method == "POST":
         form = UserDetailsForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
-            return redirect('success')
+            return redirect('/')
 
     else:
         form = UserDetailsForm(instance=user)
 
     return render(request, 'auth/complete.html', {'form': form})
 
-
 def success(request):
-    return render(request, 'success.html')
+    return render(request, 'index.html')
+
+
+def Product(request):
+    return render(request,'about.html')
+
+def Logout(request):
+    logout(request)
+    return redirect('/auth/send-otp/')

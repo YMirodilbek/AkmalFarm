@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'main',
+    'Product'
 ]
 
 MIDDLEWARE = [
@@ -128,4 +129,5 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = 'main.CustomUser'
+AUTH_USER_MODEL = "main.CustomUser"
+LOGIN_REDIRECT_URL = '/auth/send-otp/'

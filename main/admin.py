@@ -1,6 +1,8 @@
+from unicodedata import category
+
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser,PDFDocument
+from .models import *
 
 class CustomUserAdmin(UserAdmin):
     def save_model(self, request, obj, form, change):
@@ -31,3 +33,6 @@ class CustomUserAdmin(UserAdmin):
 
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(PDFDocument)
+
+#Product
+
