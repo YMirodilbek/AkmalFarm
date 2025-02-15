@@ -79,7 +79,12 @@
                     <div class="col-lg-2 col-md-3">
                         <div class="cart_area">
                             <div class="wishlist_link">
-                                <a href="#" id="login-link">
+                                {% if user.is_authenticated %}
+                                <a href="/auth/logout/" >
+                                {% else %}
+                                <a href="/auth/send-otp/" >
+                                {% endif %}
+
                                     <p style="line-height: 15px !important;">
                                         <i class="ion-person"
                                             style="font-size: 2.3rem; display: flex; justify-content: center; align-items: center; margin-right: 10px;"></i>
@@ -87,33 +92,6 @@
                                     </p>
                                 </a>
 
-                                <!-- Birinchi Modal (Telefon raqamini kiritish) -->
-                                <div id="login-modal" class="modal">
-                                    <div class="modal-content">
-                                        <span class="close-btn" id="close-modal">&times;</span>
-                                        <h4 style="color: black;">Telefon raqamingizni kiriting</h4>
-                                        <p style="color: black;">SMS orqali tasdiqlash kodini yuboramiz</p>
-                                        <input type="text" id="phone" placeholder="+998 00 000-00-00" maxlength="17"
-                                            required>
-                                        <button id="get-code-btn">Kodni olish</button>
-                                        <p class="terms" style="color: black;">
-                                            Ro'yxatdan o'tish orqali shaxsiy ma'lumotlarni qayta ishlash siyosati bilan
-                                            tanishasiz
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Ikkinchi Modal (SMS kodini kiritish) -->
-                                <div id="login-modal2" class="modal">
-                                    <div class="modal-content">
-                                        <span id="close-modal2" class="close"
-                                            style="font-size: 3rem; color:  red; padding-left: 330px;">&times;</span>
-                                        <p style="color: black; font-size: 1.3rem; margin-bottom: 10px;">SMS kodini
-                                            kiriting:</p>
-                                        <input type="text" id="sms-code" placeholder="SMS kodi">
-                                        <button id="submit-code-btn2">Kodni tasdiqlash</button>
-                                    </div>
-                                </div>
 
 
 
@@ -354,20 +332,25 @@
                                         <div class="cart_info">
                                             <a href="#">{{ items.product.name}}</a>
                                             <p>soni: {{ items.quantity }} dona</p>
+                                            {% if items.product.new_price > 0 %}
+                                            <p>narxi: {{ items.product.new_price }} So'm</p>
+                                            {% else %}
                                             <p>narxi: {{ items.product.price }} So'm</p>
-                                            <p><strong>Umumiy: ${{ items.total_price }} So'm</strong></p>
+                                            {% endif %}
+                                            <p><strong>Umumiy: {{ items.total_price }} So'm</strong></p>
                                             <form action="#">
-                                                <input min="0" max="100" type="number">
-                                                {% if items.product.new_price > 0 %}
-                                                <span>{{items.product.new_price}}</span>
-                                                {% else %}
-                                                <span>{{items.product.price}}</span>
-                                                {% endif %}
+
+
                                             </form>
                                         </div>
                                     </div>
                                     {% endfor %}
-                                    <p><strong>Umumiy Narx: {{ cart_total }} So'm</strong></p>
+                                    <p><strong>Dori Narxi: {{ cart_total }} So'm</strong></p>
+                                    <p><strong>Yetkazib berish Narx: 15000 So'm</strong></p>
+                                    <p><strong>Umumiy Narxi: {{ cart_total |add:15000}} So'm</strong></p>
+
+
+
                                     <div class="cart_button view_cart">
                                         <a href="/cart/">View and Edit Cart</a>
                                     </div>
