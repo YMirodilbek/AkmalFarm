@@ -9,4 +9,6 @@ urlpatterns = [
     path("increase-quantity/<int:item_id>/", increase_quantity, name="increase_quantity"),
     path("decrease-quantity/<int:item_id>/", decrease_quantity, name="decrease_quantity"),
     path('remove_from_cart/<int:product_id>/', DeleteProduct, name="delete"),
+    path('search/', search_products, name='search_products'),
+    path('productdetail/<int:pk>/' , ProductDetailView.as_view(), name='product_detail'),
 ]

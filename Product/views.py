@@ -1,6 +1,8 @@
 from unicodedata import category
 
 from django.shortcuts import render
+from django.views.generic import DetailView
+
 from .models import *
 # Create your views here.
 
@@ -71,3 +73,35 @@ def DeleteProduct(request, product_id):
         if order_item:
             order_item.delete()
     return redirect("cart")  # Savat sahifasiga qaytarish
+
+
+
+from unidecode import unidecode
+
+def search_products(request):
+    query = request.GET.get('q', '')  # Foydalanuvchi kiritgan so‘z
+    category_id = request.GET.get('category', '')
+
+    products = Product.objects.all()
+
+    if query:
+        normalized_query = unidecode(query.lower())  # Kirillni lotinga o‘giramiz
+        products = products.filter(name__icontains=query) | products.filter(name__icontains=normalized_query)
+
+    if category_id:
+        products = products.filter(category_id=category_id)
+
+    categories = Category.objects.all()  # Barcha kategoriyalarni olish
+
+    return render(request, 'search_result.html', {
+        'products': products,
+        'query': query,
+        'categories': categories,
+        'selected_category': category_id
+    })
+
+
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'product-details.html'
+    context_object_name = 'product'

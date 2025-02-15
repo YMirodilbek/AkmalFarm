@@ -68,8 +68,8 @@
 
                         </div>
                         <div class="search_bar">
-                            <form action="#">
-                                <input placeholder="Поиск: " type="text">
+                            <form action="/search/" method = "GET">
+                                <input placeholder="Поиск: " type="text" name="q" value="{{query}}">
                                 <button class="btn" style=".btn {color: black;}"><i
                                         class="ion-ios-search-strong"></i></button>
                             </form>
