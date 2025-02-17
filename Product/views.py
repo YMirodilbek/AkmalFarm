@@ -129,3 +129,36 @@ def checkout_view(request):
 
 
 
+def Myaccount(request):
+    return render(request,'my-account.html')
+
+
+
+from django.shortcuts import render, get_object_or_404, redirect
+
+from django.contrib import messages
+
+@login_required
+def toggle_wishlist(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    wishlist_item = Wishlist.objects.filter(user=request.user, product=product)
+
+    if wishlist_item.exists():
+        wishlist_item.delete()
+        messages.success(request, "Mahsulot wishlistdan olib tashlandi!")
+    else:
+        Wishlist.objects.create(user=request.user, product=product)
+        messages.success(request, "Mahsulot wishlistga qo‘shildi!")
+
+    return redirect(request.META.get('HTTP_REFERER', 'wishlist'))  # Oldingi sahifaga qaytarish
+
+
+
+
+@login_required(login_url='/auth/send-otp/')
+def wishlist_view(request):
+    wishlist_items= Wishlist.objects.filter(user=request.user)
+    context = {
+        'wishlist_items': wishlist_items,
+    }
+    return render(request,'wishlist.html',context)

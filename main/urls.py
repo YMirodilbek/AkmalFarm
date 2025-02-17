@@ -8,7 +8,8 @@ urlpatterns = [
     path('verify-otp/', verify_otp, name='verify_otp'),
     path('complete-registration/', complete_registration, name='complete_registration'),
     path('success/', success, name='success'),
-    path('logout/',Logout)
+    path('logout/',Logout),
+
 
 
 

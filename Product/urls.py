@@ -12,4 +12,7 @@ urlpatterns = [
     path('search/', search_products, name='search_products'),
     path('productdetail/<int:pk>/' , ProductDetailView.as_view(), name='product_detail'),
     path('checkout/',checkout_view, name='checkout'),
+    path('myaccount/',Myaccount),
+    path('wishlist/', wishlist_view, name='wishlist'),
+    path('toggle/<int:product_id>/', toggle_wishlist, name='toggle_wishlist'),
 ]

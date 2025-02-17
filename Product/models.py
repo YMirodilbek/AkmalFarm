@@ -55,3 +55,17 @@ class OrderItem(models.Model):
             return self.product.new_price * self.quantity
         else:
             return self.product.price * self.quantity
+
+
+
+from main.models import CustomUser
+class Wishlist(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    added_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'product')  # Bir mahsulotni faqat bir marta wishlistga qo‘shish uchun
+
+    def __str__(self):
+        return f"{self.user.first_name} - {self.product.name}"

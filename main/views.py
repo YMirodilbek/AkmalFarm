@@ -110,3 +110,6 @@ def Product(request):
 def Logout(request):
     logout(request)
     return redirect('/auth/send-otp/')
+
+
+
