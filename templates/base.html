@@ -88,7 +88,11 @@
                                     <p style="line-height: 15px !important;">
                                         <i class="ion-person"
                                             style="font-size: 2.3rem; display: flex; justify-content: center; align-items: center; margin-right: 10px;"></i>
+                                            {% if user.is_authenticated %}
+                                            <span>{{ request.user.first_name}}</span>
+                                            {% else %}
                                         <span>Личный кабинет</span>
+                                        {% endif %}
                                     </p>
                                 </a>
 

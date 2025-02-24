@@ -15,4 +15,5 @@ urlpatterns = [
     path('myaccount/',Myaccount),
     path('wishlist/', wishlist_view, name='wishlist'),
     path('toggle/<int:product_id>/', toggle_wishlist, name='toggle_wishlist'),
+    path('contact/',Contact)
 ]

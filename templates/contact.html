@@ -45,19 +45,19 @@
                                 <form id="contact-form" method="POST"  action="https://whizthemes.com/nazmul/php/mail.php">
                                     <p>  
                                        <label>Ism </label>
-                                        <input name="name" placeholder="ism krting: *" type="text"> 
+                                        {{form.name}}
                                     </p>
                                     <p>       
                                        <label>Email</label>
-                                        <input name="email" placeholder="Email kirting:  *" type="email">
+                                        {{form.email}}
                                     </p>
                                     <p>          
                                        <label>Mavzu</label>
-                                        <input name="subject" placeholder="Mavzu *" type="text">
+                                        {{form.subject}}
                                     </p>    
                                     <div class="contact_textarea">
                                         <label>Bizga Xabaringiz</label>
-                                        <textarea placeholder="Xabar *" name="message"  class="form-control2" ></textarea>     
+                                       {{form.text}}>     
                                     </div>   
                                     <button type="submit">Yuborish</button>  
                                     <p class="form-messege"></p>

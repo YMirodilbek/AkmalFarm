@@ -1,5 +1,5 @@
 from django.db import models
-
+from main.models import *
 # Create your models here.
 
 
@@ -37,8 +37,14 @@ User = get_user_model()
 
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="orders")
+    # filial = models.ForeignKey(Filial,on_delete=models.SET_NULL,null=True,blank=True)
     is_completed = models.BooleanField(default=False)
 
+
+    def __str__(self):
+        return f"Order {self.id} - {self.user.username} - {self.filial}"
+
+        
     @property
     def total_price(self):
         return sum(item.total_price for item in self.items.all())
@@ -69,3 +75,16 @@ class Wishlist(models.Model):
 
     def __str__(self):
         return f"{self.user.first_name} - {self.product.name}"
+
+
+class Aloqa(models.Model):
+    name = models.CharField(max_length=120)
+    email = models.EmailField(max_length=80)
+    subject = models.CharField(max_length=200)
+    text = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
+
