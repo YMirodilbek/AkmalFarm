@@ -111,61 +111,68 @@
                 </div>         
             </div>
             <!--breadcrumbs area end-->
-      <form method="post">
-    {% csrf_token %}
-    <div class="form-group">
-        <label>{{ form.full_name.label }}</label>
-        {{ form.full_name }}
-    </div>
-
-    <div class="form-group">
-        <label>{{ form.phone_number.label }}</label>
-        {{ form.phone_number }}
-    </div>
-
-    <div class="form-group">
-        <label>{{ form.payment_method.label }}</label>
-        {{ form.payment_method }}
-    </div>
-
-    <div class="form-group">
-        <label>Yetkazib berish manzili</label>
-        <input type="text" id="address" class="form-control" readonly>
-        {{ form.address }}
-    </div>
-
-    <button type="submit" class="btn btn-primary">Buyurtmani yakunlash</button>
-</form>
-
-<!-- Google Maps JS -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places"></script>
-<script>
-    function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 41.2995, lng: 69.2401}, // O'zbekiston markazi
-            zoom: 12
-        });
-
-        var input = document.getElementById('address');
-        var autocomplete = new google.maps.places.Autocomplete(input);
-
-        autocomplete.addListener('place_changed', function () {
-            var place = autocomplete.getPlace();
-            if (!place.geometry) {
-                return;
-            }
-
-            document.getElementById("id_address").value = place.formatted_address;
-        });
-    }
-
-    google.maps.event.addDomListener(window, 'load', initMap);
-</script>
-
-<div id="map" style="height: 300px; width: 100%; margin-top: 10px;"></div>
-
-             <!--Checkout page section-->
-
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
             
-<br><br><br><br><br><br>            
+                <h3>Manzilni tanlang:</h3>
+                <label>
+                    <input type="radio" name="address_type" value="manual" checked> Qo'lda kiritish
+                </label>
+                <label>
+                    <input type="radio" name="address_type" value="maps"> Google Maps orqali
+                </label>
+            
+                <!-- Qo'lda manzil kiritish -->
+                <div id="manual-address">
+                    <input type="text" name="address_text" id="address_text" placeholder="Manzilni kiriting">
+                </div>
+            
+                <!-- Google Maps orqali tanlash -->
+                <div id="maps-address" style="display: none;">
+                    <input type="text" id="address-input" placeholder="Google Maps orqali tanlang" readonly>
+                    <div id="map" style="height: 300px;"></div>
+                    <input type="hidden" name="address_lat" id="address_lat">
+                    <input type="hidden" name="address_lng" id="address_lng">
+                </div>
+            
+                <button type="submit">Buyurtmani rasmiylashtirish</button>
+            </form>
+            
+            <script>
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    center: { lat: 41.3111, lng: 69.2797 },
+                    zoom: 13
+                });
+            
+                var marker = new google.maps.Marker({
+                    position: { lat: 41.3111, lng: 69.2797 },
+                    map: map,
+                    draggable: true
+                });
+            
+                google.maps.event.addListener(marker, 'dragend', function(event) {
+                    document.getElementById('address_lat').value = event.latLng.lat();
+                    document.getElementById('address_lng').value = event.latLng.lng();
+                    document.getElementById('address-input').value = event.latLng.lat() + ', ' + event.latLng.lng();
+                });
+            }
+            
+            // Manzil tanlash opsiyalarini boshqarish
+            document.querySelectorAll('input[name="address_type"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.value === "manual") {
+                        document.getElementById("manual-address").style.display = "block";
+                        document.getElementById("maps-address").style.display = "none";
+                    } else {
+                        document.getElementById("manual-address").style.display = "none";
+                        document.getElementById("maps-address").style.display = "block";
+                    }
+                });
+            });
+            </script>
+            
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"></script>
+            
  {% endblock content %}

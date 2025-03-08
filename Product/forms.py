@@ -19,17 +19,18 @@ class ContactForm(forms.ModelForm):
 
 
 
-class CheckoutForm(forms.Form):
-    PAYMENT_CHOICES = [
-        ('card', 'Karta orqali to‘lov'),
-        ('cod', 'Yetkazib berishda to‘lov'),
-    ]
+from django import forms
+from .models import Order
 
-    full_name = forms.CharField(label="Ism Familiya", max_length=100,
-                                widget=forms.TextInput(attrs={'class': 'form-control'}))
-    phone_number = forms.CharField(label="Telefon raqam", max_length=15,
-                                   widget=forms.TextInput(attrs={'class': 'form-control'}))
-    payment_method = forms.ChoiceField(label="To‘lov turi", choices=PAYMENT_CHOICES, widget=forms.RadioSelect())
-    address = forms.CharField(label="Yetkazib berish manzili", widget=forms.HiddenInput())  # Google Maps dan olinadi
+class CheckoutForm(forms.ModelForm):
+    filial = forms.ModelChoiceField(queryset=Filial.objects.all(), empty_label="Filial tanlang", required=True)
+    payment_method = forms.ChoiceField(choices=Order.PAYMENT_METHODS, widget=forms.RadioSelect)
+    address_text = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder': "Manzilni qo'lda kiriting"}))
+    phone_number1 = forms.CharField(widget=forms.TextInput(attrs={'placeholder': "Telefon raqamizi kiriting"}))
+    phone_number2 = forms.CharField(required=False,widget=forms.TextInput(attrs={'placeholder': "qoshimcha raqamizi kiriting agar bolsa "}))
 
 
+
+    class Meta:
+        model = Order
+        fields = ['filial', 'payment_method', 'address_text','phone_number1','phone_number2']
