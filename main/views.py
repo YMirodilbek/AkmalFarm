@@ -111,5 +111,3 @@ def Logout(request):
     logout(request)
     return redirect('/auth/send-otp/')
 
-
-

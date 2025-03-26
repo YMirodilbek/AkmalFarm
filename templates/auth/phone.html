@@ -37,3 +37,73 @@
   </div>
 </body>
 </html>
+
+
+
+
+
+<style>
+  .vacancy-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+  }
+
+  .vacancy-card {
+      width: calc(100% / 6 - 20px);
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px #bcd4ff;
+      padding: 15px;
+      box-sizing: border-box;
+      transition: transform 0.3s ease;
+  }
+
+  .vacancy-card:hover {
+      transform: translateY(-5px);
+  }
+
+  .vacancy-card h2 {
+      font-size: 18px;
+      color: #2c3e50;
+      margin-bottom: 10px;
+  }
+
+  .vacancy-card p {
+      font-size: 14px;
+      margin: 6px 0;
+      color: #333;
+  }
+
+  .vacancy-card i {
+      color: red;
+      margin-right: 6px;
+  }
+
+  /* ✅ Responsive breakpoints */
+  @media (max-width: 1200px) {
+      .vacancy-card {
+          width: calc(100% / 4 - 20px);
+      }
+  }
+
+  @media (max-width: 992px) {
+      .vacancy-card {
+          width: calc(100% / 3 - 20px);
+      }
+  }
+
+  @media (max-width: 768px) {
+      .vacancy-card {
+          width: calc(100% / 2 - 20px);
+      }
+  }
+
+  @media (max-width: 500px) {
+      .vacancy-card {
+          width: 100%;
+      }
+  }
+</style>
