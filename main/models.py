@@ -29,10 +29,10 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     phone_number = models.CharField(max_length=13, unique=True)
     first_name = models.CharField(max_length=30, blank=True, null=True)
     last_name = models.CharField(max_length=30, blank=True, null=True)
-    is_active = models.BooleanField(default=True)  # Foydalanuvchini aktiv qilish
-    is_staff = models.BooleanField(default=False)  # Admin panelga kiritish uchun
-    is_superuser = models.BooleanField(default=False)  # Superuser huquqlari
-    is_agree = models.BooleanField(default=False)  # Shartlarga rozilik
+    is_active = models.BooleanField(default=True)  
+    is_staff = models.BooleanField(default=False) 
+    is_superuser = models.BooleanField(default=False)  
+    is_agree = models.BooleanField(default=False) 
     date_joined = models.DateTimeField(auto_now_add=True)
 
     objects = UserManager()

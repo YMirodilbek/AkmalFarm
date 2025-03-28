@@ -4,12 +4,12 @@ from django.shortcuts import render
 
 
 def Operator(request):
-    return render(request,'operator.html')
+    return render(request,'new/operator.html')
 
 
 def Vacancy(request):
-    return render(request,'vacancy.html')
+    return render(request,'new/vacancy.html')
 
 
 def Pharm(request):
-    return render(request,'farmaset.html')
+    return render(request,'new/farmaset.html')

@@ -3,6 +3,7 @@ from .views import *
 urlpatterns=[
     path('operator/',Operator),
     path('vacancy/',Vacancy),
-    path('pharm/',Pharm)
+    path('pharm/',Pharm),
+    
 
 ]

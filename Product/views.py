@@ -15,21 +15,21 @@ from django.contrib.auth.decorators import login_required
 def add_to_cart(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     print(request.user)
-    # Foydalanuvchining ochiq (tugallanmagan) buyurtmasini olish
+   
     order, created = Order.objects.get_or_create(user=request.user, is_completed=False)
 
-    # Agar mahsulot allaqachon savatda bo‘lsa, sonini oshiramiz
+    
     order_item, created = OrderItem.objects.get_or_create(order=order, product=product)
 
     if not created:
-        order_item.quantity += 1  # Agar bor bo‘lsa, miqdorini oshiramiz
+        order_item.quantity += 1  
         order_item.save()
     messages.success(request, " mahsulot Savatchaga qo'shildi ")
 
-    return redirect(request.META.get("HTTP_REFERER", "home"))  # Savat sahifasiga qaytarish
+    return redirect(request.META.get("HTTP_REFERER", "home"))  
 @login_required(login_url='/auth/send-otp/')
 def cart_view(request):
-    order = Order.objects.filter(user=request.user, is_completed=False).first()  # Faqat o‘z savatini oladi
+    order = Order.objects.filter(user=request.user, is_completed=False).first()  
     return render(request, "cart.html", {"order": order})
 def Index(request):
     product_xit = Product.objects.filter(category=1).all()
@@ -63,8 +63,7 @@ def decrease_quantity(request, item_id):
         order_item.quantity -= 1
         order_item.save()
     else:
-        order_item.delete()  # Agar 1 bo‘lsa, butunlay o‘chirib tashlaymiz
-
+        order_item.delete()  
     return redirect("cart")
 
 login_required(login_url='/auth/send-otp/')
@@ -75,26 +74,26 @@ def DeleteProduct(request, product_id):
         order_item = OrderItem.objects.filter(order=order, product_id=product_id).first()
         if order_item:
             order_item.delete()
-    return redirect("cart")  # Savat sahifasiga qaytarish
+    return redirect("cart")  
 
 
 
 from unidecode import unidecode
 
 def search_products(request):
-    query = request.GET.get('q', '')  # Foydalanuvchi kiritgan so‘z
+    query = request.GET.get('q', '')  
     category_id = request.GET.get('category', '')
 
     products = Product.objects.all()
 
     if query:
-        normalized_query = unidecode(query.lower())  # Kirillni lotinga o‘giramiz
+        normalized_query = unidecode(query.lower()) 
         products = products.filter(name__icontains=query) | products.filter(name__icontains=normalized_query)
 
     if category_id:
         products = products.filter(category_id=category_id)
 
-    categories = Category.objects.all()  # Barcha kategoriyalarni olish
+    categories = Category.objects.all()  
 
     return render(request, 'search_result.html', {
         'products': products,
@@ -113,15 +112,15 @@ def checkout_view(request):
     if request.method == "POST":
         form = CheckoutForm(request.POST)
         if form.is_valid():
-            # Ma'lumotlarni qayta ishlash
+           
             full_name = form.cleaned_data['full_name']
             phone_number = form.cleaned_data['phone_number']
             payment_method = form.cleaned_data['payment_method']
             address = form.cleaned_data['address']
 
-            # Bu yerda buyurtmani saqlash logikasi qo‘shilishi mumkin
+            
 
-            return redirect('order_success')  # Buyurtma muvaffaqiyatli sahifasiga yo‘naltirish
+            return redirect('order_success')  
     else:
         form = CheckoutForm()
 
@@ -150,7 +149,7 @@ def toggle_wishlist(request, product_id):
         Wishlist.objects.create(user=request.user, product=product)
         messages.success(request, "Mahsulot wishlistga qo‘shildi!")
 
-    return redirect(request.META.get('HTTP_REFERER', 'wishlist'))  # Oldingi sahifaga qaytarish
+    return redirect(request.META.get('HTTP_REFERER', 'wishlist')) 
 
 
 
@@ -204,11 +203,11 @@ def checkout_view(request):
             order.is_completed = False
             order.save()
 
-            # Savatdagi mahsulotlarni buyurtmaga qo‘shish
+           
             for item in cart_items:
                 OrderItem.objects.create(order=order, product=item.product, quantity=item.quantity)
 
-            # Savatni tozalash
+           
             request.user.cart.items.all().delete()
             
             messages.success(request, "Buyurtmangiz rasmiylashtirildi!")

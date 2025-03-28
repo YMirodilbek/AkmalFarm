@@ -10,13 +10,4 @@ urlpatterns = [
     path('success/', success, name='success'),
     path('logout/',Logout),
 
-
-
-
-    #Html
-
-
-
-
-
 ]
